@@ -20,6 +20,7 @@
  *   POST /admin/bulk-images/batches/:id/retry-failed
  * Items
  *   GET  /admin/bulk-images/items/:id               review detail
+ *   GET  /admin/bulk-images/items/:id/picks         look-alikes (picture index) + sets to browse
  *   POST /admin/bulk-images/items/:id/confirm       { pinhuntId, method }
  *   POST /admin/bulk-images/items/:id/skip | flag | reopen   { notes? }
  *   POST /admin/bulk-images/items/:id/reclean       reject the Pixian result, clean again
@@ -27,7 +28,7 @@
  *   POST /admin/bulk-images/items/:id/retry         retry the failed stage only
  *   POST /admin/bulk-images/items/:id/publish       { replaceExisting? }
  * Search
- *   GET  /admin/bulk-images/search?q=               manual catalogue search
+ *   GET  /admin/bulk-images/search?q=&set=&offset=  manual catalogue search; with set, browse it 30 at a time
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
@@ -42,13 +43,13 @@ import {
 } from "@workspace/pin-repository";
 import { normalizePinPhoto, pixianConfigured } from "../services/pixian";
 import { matchPhoto } from "../services/bulkImages/match";
-import { BUCKET, cropToBox, download, isRunning, pausedReasons, processBatch, type PipelineDeps } from "../services/bulkImages/pipeline";
+import { BUCKET, cropToBox, download, forMatching, isRunning, pausedReasons, processBatch, type PipelineDeps } from "../services/bulkImages/pipeline";
 import { parseBox } from "../services/bulkImages/match";
 import { publishItem, PublishBlockedError } from "../services/bulkImages/publish";
 import { pinAndPopReferenceImages } from "../services/scanReferenceImages";
 import { lookalikePins } from "../services/pictureIndex/search";
 import { pictureIndexConfigured } from "../services/pictureIndex/vertex";
-import { cleanSetList, learnBatchSet, readStats, rematchUndecided, updateBatchStats } from "../services/bulkImages/batchStats";
+import { batchSets, cleanSetList, learnBatchSet, readStats, rematchUndecided, updateBatchStats } from "../services/bulkImages/batchStats";
 import { ANSWERED_STATUSES, batchAccuracyRunning, MAX_CHECKED, startBatchAccuracyCheck } from "../services/bulkImages/accuracy";
 
 const router: IRouter = Router();
@@ -669,21 +670,77 @@ router.post("/admin/bulk-images/items/:id/publish", guard, async (req: AdminRequ
 
 // ── Manual search ────────────────────────────────────────────────────────────
 
+/** Pins per page when browsing a set. */
+export const BROWSE_PAGE = 30;
+/** Look-alikes offered for one photo. */
+export const LOOKALIKE_PICKS = 24;
+
+function pickRow(p: CataloguePin) {
+  return {
+    pinhuntId: p.id, title: p.title, collection: p.collection, brand: p.brand,
+    edition: p.edition ?? null, characters: p.characters.slice(0, 6), imageUrl: p.imageUrl ?? null,
+  };
+}
+
+/**
+ * Manual catalogue search. With `set`, browse that set (optionally narrowed
+ * by `q`) a page at a time (`offset`), so a pin titled only by character can
+ * be picked from its set's pictures.
+ */
 router.get("/admin/bulk-images/search", guard, async (req, res) => {
   try {
-    const q = typeof req.query.q === "string" ? req.query.q.trim() : "";
-    if (q.length < 2) { res.json({ results: [], pinAndPop: {} }); return; }
+    const q = typeof req.query.q === "string" ? req.query.q.trim().slice(0, 100) : "";
+    const set = typeof req.query.set === "string" && req.query.set.trim() ? req.query.set.trim().slice(0, 120) : null;
+    const offset = Math.max(0, Math.min(Number(req.query.offset) || 0, 5_000));
+    if (!set && q.length < 2) { res.json({ results: [], pinAndPop: {}, total: 0, more: false }); return; }
     const repo = getPinRepo();
-    // An exact PinHunt id goes straight to that pin.
-    const pins = /^PHUK-\d{8}$/i.test(q)
-      ? [await repo.getPinByPinhuntId(q.toUpperCase())].filter((p): p is CataloguePin => !!p)
-      : await repo.searchPins(q, { limit: 20 });
-    const results = pins.map((p) => ({
-      pinhuntId: p.id, title: p.title, collection: p.collection, brand: p.brand,
-      edition: p.edition ?? null, characters: p.characters.slice(0, 6), imageUrl: p.imageUrl ?? null,
-    }));
+    let pins: CataloguePin[];
+    let total: number;
+    if (!set && /^PHUK-\d{8}$/i.test(q)) {
+      // An exact PinHunt id goes straight to that pin.
+      pins = [await repo.getPinByPinhuntId(q.toUpperCase())].filter((p): p is CataloguePin => !!p);
+      total = pins.length;
+    } else if (set) {
+      ({ pins, total } = await repo.searchPinsPage(q, { status: "active", collection: set, limit: BROWSE_PAGE, offset }));
+    } else {
+      pins = await repo.searchPins(q, { limit: 20 });
+      total = pins.length;
+    }
+    const results = pins.map(pickRow);
     const pinAndPop = await pinAndPopRefs(results.map((r) => r.pinhuntId)).catch(() => ({}));
-    res.json({ results, pinAndPop });
+    res.json({ results, pinAndPop, total, more: !!set && offset + pins.length < total });
+  } catch (err) { fail(res, err); }
+});
+
+/**
+ * Starting points for correcting one photo: the batch's sets plus the sets
+ * of its suggestions (to browse), and, when the picture index is on, the
+ * catalogue pins that look most like the photo (one Vertex call ≈ $0.0001).
+ */
+router.get("/admin/bulk-images/items/:id/picks", guard, async (req, res) => {
+  try {
+    const item = await loadItem(String(req.params.id));
+    if (!item) { res.status(404).json({ error: "Item not found" }); return; }
+    const db = getServiceClient();
+    const sets: string[] = [];
+    for (const s of [...(await batchSets(db, item.batch_id).catch(() => [])), ...((item.candidates ?? []) as Array<{ collection?: string }>).map((c) => c.collection ?? "")]) {
+      const name = s.trim();
+      if (name && !sets.some((x) => x.toLowerCase() === name.toLowerCase())) sets.push(name);
+    }
+    let lookalikes: ReturnType<typeof pickRow>[] = [];
+    if (pictureIndexConfigured()) {
+      try {
+        const photo = await forMatching(await download(db, item.original_path));
+        const ids = await lookalikePins(photo, LOOKALIKE_PICKS);
+        const pins = await getPinRepo().getPinsByIds(ids);
+        const rank = new Map(ids.map((id, n) => [id, n]));
+        lookalikes = pins.filter((p) => rank.has(p.id)).sort((a, b) => rank.get(a.id)! - rank.get(b.id)!).map(pickRow);
+      } catch (err) {
+        console.warn("[bulk-images] look-alikes unavailable:", err instanceof Error ? err.message : err);
+      }
+    }
+    const pinAndPop = await pinAndPopRefs(lookalikes.map((r) => r.pinhuntId)).catch(() => ({}));
+    res.json({ sets: sets.slice(0, 6), lookalikes, pinAndPop, pictureIndex: pictureIndexConfigured() });
   } catch (err) { fail(res, err); }
 });
 

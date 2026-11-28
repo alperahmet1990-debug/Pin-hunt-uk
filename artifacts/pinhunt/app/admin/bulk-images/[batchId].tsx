@@ -719,8 +719,158 @@ function ReviewPanel({ items, patchItem, reload }: {
               </View>
             );
           }))}
+
+          <WhichPin key={detail.item.id} itemId={detail.item.id} busy={busy} onUse={(c) => confirm(c, 'manual_search')} />
         </View>
       )}
+    </View>
+  );
+}
+
+// ── Which pin is it? ─────────────────────────────────────────────────────────
+
+interface PickList { results: Candidate[]; pinAndPop: Record<string, PinAndPopRef>; total?: number; more?: boolean }
+interface Picks { sets: string[]; lookalikes: Candidate[]; pinAndPop: Record<string, PinAndPopRef>; pictureIndex: boolean }
+
+/** The picture to show for a pin: its catalogue photo, else the admin-only Pin & Pop reference. */
+export function pickPicture(c: Candidate, refs: Record<string, PinAndPopRef>): string | null {
+  return c.imageUrl ?? refs[c.pinhuntId]?.imageUrl ?? null;
+}
+
+/**
+ * Correcting a match by picture: the pins that look most like the photo
+ * (picture index) and the batch's sets to browse as picture grids. Tap a
+ * picture to select it, then "Use this pin". Loaded on request (one picture
+ * search ≈ $0.0001).
+ */
+function WhichPin({ itemId, busy, onUse }: { itemId: string; busy: boolean; onUse: (c: Candidate) => void }) {
+  const colors = useColors();
+  const api = useApi();
+  const [picks, setPicks] = useState<Picks | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [set, setSet] = useState<string | null>(null);
+  const [filter, setFilter] = useState('');
+  const [browse, setBrowse] = useState<PickList | null>(null);
+  const [chosen, setChosen] = useState<Candidate | null>(null);
+
+  const open = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      setPicks(await api<Picks>(`/admin/bulk-images/items/${itemId}/picks`));
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not load look-alikes.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  const load = async (name: string, q: string, offset = 0) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const page = await api<PickList>(`/admin/bulk-images/search?set=${encodeURIComponent(name)}&q=${encodeURIComponent(q.trim())}&offset=${offset}`);
+      setBrowse((prev) => (offset > 0 && prev
+        ? { ...page, results: [...prev.results, ...page.results], pinAndPop: { ...prev.pinAndPop, ...page.pinAndPop } }
+        : page));
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not load the set.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  const pickSet = (name: string) => {
+    setChosen(null);
+    if (set === name) { setSet(null); setBrowse(null); return; }
+    setSet(name);
+    setFilter('');
+    void load(name, '');
+  };
+
+  const grid = (pins: Candidate[], refs: Record<string, PinAndPopRef>) => (
+    <View style={styles.pickGrid}>
+      {pins.map((c) => {
+        const uri = pickPicture(c, refs);
+        const on = chosen?.pinhuntId === c.pinhuntId;
+        return (
+          <Pressable key={c.pinhuntId} onPress={() => setChosen(on ? null : c)} accessibilityLabel={`Choose ${c.title}`}
+            style={[styles.pickTile, { borderColor: on ? colors.homeCoral : colors.homeLine, borderWidth: on ? 3 : 1 }]}>
+            <View style={[styles.pickImg, { backgroundColor: colors.homeAqua }]}>
+              {uri ? <Image source={{ uri }} style={{ width: '100%', height: '100%' }} resizeMode="contain" /> : null}
+            </View>
+            <Text style={[styles.meta, { color: colors.homeInk }]} numberOfLines={2}>{c.title}</Text>
+            <Text style={[styles.meta, { color: colors.homeMuted, fontSize: 11 }]} numberOfLines={1}>{c.pinhuntId}</Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+
+  if (!picks) {
+    return (
+      <View style={styles.rowWrap}>
+        <Btn icon="grid" label={loading ? 'Loading…' : 'Which pin is it? Look-alikes & sets'} onPress={open} disabled={loading} />
+        {error ? <Text style={{ color: colors.destructive, fontSize: 13 }}>{error}</Text> : null}
+      </View>
+    );
+  }
+  return (
+    <View style={{ gap: 10 }}>
+      <Text style={[styles.meta, { color: colors.homeInk, fontFamily: 'Inter_600SemiBold' }]}>Which pin is it?</Text>
+      {chosen ? (
+        <View style={styles.rowWrap}>
+          <Btn kind="primary" icon="check" label={`Use ${chosen.title}`} onPress={() => onUse(chosen)} disabled={busy} />
+          <Text style={[styles.meta, { color: colors.homeMuted }]}>{chosen.pinhuntId} · {chosen.collection}</Text>
+        </View>
+      ) : (
+        <Text style={[styles.meta, { color: colors.homeMuted }]}>Tap a picture to choose it.</Text>
+      )}
+
+      {picks.lookalikes.length ? (
+        <>
+          <Text style={[styles.meta, { color: colors.homeInk }]}>Looks like your pin</Text>
+          {grid(picks.lookalikes, picks.pinAndPop)}
+        </>
+      ) : (
+        <Text style={[styles.meta, { color: colors.homeMuted }]}>
+          {picks.pictureIndex ? 'No look-alikes found for this photo.' : 'Look-alikes appear once the picture index is switched on.'}
+        </Text>
+      )}
+
+      {picks.sets.length ? (
+        <>
+          <Text style={[styles.meta, { color: colors.homeInk }]}>Browse a set</Text>
+          <View style={styles.rowWrap}>
+            {picks.sets.map((name) => (
+              <Pressable key={name} onPress={() => pickSet(name)}
+                style={[styles.chip, { borderColor: colors.homeCoral, backgroundColor: set === name ? colors.homeCoral : 'transparent' }]}>
+                <Text style={[styles.meta, { color: set === name ? colors.homeHeroText : colors.homeInk }]}>{name}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </>
+      ) : null}
+      {set ? (
+        <>
+          <View style={styles.searchRow}>
+            <TextInput value={filter} onChangeText={setFilter} onSubmitEditing={() => load(set, filter)}
+              placeholder={`Narrow ${set} (e.g. a character)`} placeholderTextColor={colors.homeMuted}
+              style={[styles.input, { flex: 1, borderColor: colors.homeLine, color: colors.homeInk }]} />
+            <Btn icon="search" label="Narrow" onPress={() => load(set, filter)} disabled={loading} />
+          </View>
+          {browse ? (
+            browse.results.length ? (
+              <>
+                {grid(browse.results, browse.pinAndPop)}
+                <Text style={[styles.meta, { color: colors.homeMuted }]}>{browse.results.length} of {browse.total ?? browse.results.length}</Text>
+                {browse.more ? <Btn label={loading ? 'Loading…' : 'Show more'} onPress={() => load(set, filter, browse.results.length)} disabled={loading} /> : null}
+              </>
+            ) : <Text style={[styles.meta, { color: colors.homeMuted }]}>No pins in {set}{filter.trim() ? ` matching "${filter.trim()}"` : ''}.</Text>
+          ) : null}
+        </>
+      ) : null}
+      {loading ? <ActivityIndicator color={colors.homeCoral} /> : null}
+      {error ? <Text style={{ color: colors.destructive, fontSize: 13 }}>{error}</Text> : null}
     </View>
   );
 }
@@ -1010,6 +1160,9 @@ const styles = StyleSheet.create({
   input: { borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 8, fontSize: 13, fontFamily: 'Inter_400Regular' },
   searchRow: { flexDirection: 'row', gap: 8, alignItems: 'center' },
   searchResult: { flexDirection: 'row', alignItems: 'center', gap: 10, borderTopWidth: 1, paddingTop: 8 },
+  pickGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  pickTile: { width: 116, borderRadius: radius.sm, padding: 6, gap: 4 },
+  pickImg: { width: '100%', aspectRatio: 1, borderRadius: radius.sm, overflow: 'hidden' },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   gridCard: { width: 300, maxWidth: '100%' },
   cropBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', alignItems: 'center', justifyContent: 'center', padding: 16 },

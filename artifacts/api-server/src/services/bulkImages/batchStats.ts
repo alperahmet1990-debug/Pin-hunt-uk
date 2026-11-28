@@ -26,6 +26,9 @@ export interface BatchAccuracyReport {
   top1: number;
   top5: number;
   errors: number;
+  /** Why the check stopped before the end (the daily AI budget), and how many photos it didn't reach. */
+  stopped?: string;
+  notChecked?: number;
   misses: BatchAccuracyMiss[];
 }
 
@@ -34,15 +37,40 @@ export interface BatchStats {
   /** Lower-cased set name → confirmed item ids that came from it. */
   setVotes?: Record<string, string[]>;
   accuracy?: BatchAccuracyReport;
+  /** When the sets were last changed by hand (cooldown for the re-match it starts). */
+  setsChangedAt?: string;
 }
 
 export function readStats(raw: unknown): BatchStats {
   return raw && typeof raw === "object" && !Array.isArray(raw) ? (raw as BatchStats) : {};
 }
 
-/** Sets typed by the reviewer: cleaned, without repeats, at most MAX_SET_HINTS. */
+/** Raw input limits for typed sets, checked before anything is processed. */
+export const MAX_SETS_TEXT = 2_000;
+export const MAX_SETS_ENTRIES = 20;
+
+export class SetInputError extends Error {}
+
+/**
+ * Sets typed by the reviewer: cleaned, without repeats, at most MAX_SET_HINTS.
+ * A string (comma, semicolon or line separated) or an array of strings;
+ * nothing (undefined/null) means no sets. Anything else, a string over
+ * MAX_SETS_TEXT characters or an array over MAX_SETS_ENTRIES entries is
+ * refused (SetInputError) before it's processed.
+ */
 export function cleanSetList(raw: unknown): string[] {
-  const list = Array.isArray(raw) ? raw : typeof raw === "string" ? raw.split(/[\n,;]+/) : [];
+  if (raw === undefined || raw === null) return [];
+  let list: unknown[];
+  if (typeof raw === "string") {
+    if (raw.length > MAX_SETS_TEXT) throw new SetInputError(`Sets: at most ${MAX_SETS_TEXT} characters.`);
+    list = raw.split(/[\n,;]+/);
+  } else if (Array.isArray(raw)) {
+    if (raw.length > MAX_SETS_ENTRIES) throw new SetInputError(`Sets: at most ${MAX_SETS_ENTRIES} entries.`);
+    if (raw.some((v) => typeof v !== "string" || v.length > 200)) throw new SetInputError("Sets: each entry must be a name of up to 200 characters.");
+    list = raw;
+  } else {
+    throw new SetInputError("Sets must be text or a list of names.");
+  }
   return mergeSetHints([], list.map(cleanSetName).filter((s): s is string => !!s), MAX_SET_HINTS) ?? [];
 }
 
@@ -55,7 +83,14 @@ export async function updateBatchStats(db: SupabaseClient, batchId: string, patc
   const { data, error } = await db.from("bulk_image_batches").select("stats").eq("id", batchId).maybeSingle();
   if (error) throw new Error(error.message);
   const current = readStats((data as { stats?: unknown } | null)?.stats);
-  const next = { ...current, ...patch(current) };
+  const change = patch(current);
+  if (Object.keys(change).length === 0) return current;
+  // Merge only the changed keys in one statement (migration 087), so another
+  // save of a different key at the same moment isn't lost.
+  const merged = await db.rpc("bulk_merge_batch_stats", { p_batch: batchId, p_patch: change });
+  if (!merged.error) return readStats(merged.data) ;
+  console.warn("[bulk-images] stats merge unavailable (migration 087?), writing the whole copy:", merged.error.message);
+  const next = { ...current, ...change };
   const { error: upErr } = await db.from("bulk_image_batches").update({ stats: next }).eq("id", batchId);
   if (upErr) throw new Error(upErr.message);
   return next;
@@ -91,13 +126,26 @@ export async function learnBatchSet(db: SupabaseClient, batchId: string, collect
   return { learned, rematching: await rematchUndecided(db, batchId, confirmedItemId) };
 }
 
-/** Send the batch's suggested/unmatched photos (not the one just confirmed) back to be matched again. */
+/** Most photos one set change or learned set sends back to be matched (≈ 3 AI calls each). */
+export const MAX_REMATCH = 200;
+
+/**
+ * Send the batch's suggested/unmatched photos (not the one just confirmed)
+ * back to be matched again: the oldest MAX_REMATCH of them. Each re-match
+ * still has to fit in the daily AI budget (migration 087).
+ */
 export async function rematchUndecided(db: SupabaseClient, batchId: string, exceptItemId?: string): Promise<number> {
-  let q = db.from("bulk_image_items")
-    .update({ status: "uploaded", match_attempts: 0 })
+  let pick = db.from("bulk_image_items").select("id")
     .eq("batch_id", batchId).in("status", ["suggested", "unmatched"]);
-  if (exceptItemId) q = q.neq("id", exceptItemId);
-  const { data, error } = await q.select("id");
+  if (exceptItemId) pick = pick.neq("id", exceptItemId);
+  const { data: rows, error: pickErr } = await pick.order("created_at", { ascending: true }).limit(MAX_REMATCH);
+  if (pickErr) throw new Error(pickErr.message);
+  const ids = ((rows ?? []) as Array<{ id: string }>).map((r) => r.id);
+  if (ids.length === 0) return 0;
+  const { data, error } = await db.from("bulk_image_items")
+    .update({ status: "uploaded", match_attempts: 0 })
+    .in("id", ids).in("status", ["suggested", "unmatched"])
+    .select("id");
   if (error) throw new Error(error.message);
   return (data ?? []).length;
 }

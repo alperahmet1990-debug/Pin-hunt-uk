@@ -7,15 +7,21 @@
  * first and how often it was in the top 5, with the misses listed. Lets each
  * change to matching be measured on real photos.
  *
- * Runs in the background (one check per batch at a time); the result is
- * saved on the batch (stats.accuracy, migration 086). Costs the same AI calls
- * as matching those photos again (≈ 3 per photo). The batch's sets are
- * searched first, as in real use.
+ * Runs in the background; the result is saved on the batch (stats.accuracy,
+ * migration 086). Costs the same AI calls as matching those photos again
+ * (≈ 3 per photo), so (security review of #762):
+ *   - every photo's calls are reserved in the daily AI budget (migration 087)
+ *     first; when the budget is spent the check stops early and says so;
+ *   - matches go through the shared BULK_MATCH_CONCURRENCY limit;
+ *   - one check at a time on this server, and a batch can be checked again
+ *     only ACCURACY_COOLDOWN_MS after its last check.
+ * The batch's sets are searched first, as in real use.
  */
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { BulkMatchResult } from "./match";
 import { batchSets, updateBatchStats, type BatchAccuracyMiss, type BatchAccuracyReport } from "./batchStats";
-import { download, forMatching } from "./pipeline";
+import { download, forMatching, inMatchSlot, reserveFor } from "./pipeline";
+import { CALLS_PER_MATCH, type Reservation } from "./aiBudget";
 
 /** Statuses of photos with a reviewer's answer. */
 export const ANSWERED_STATUSES = ["confirmed", "cleaning", "cleaned", "published"] as const;
@@ -25,12 +31,17 @@ const MAX_MISSES = 40;
 /** Most photos one check re-matches (≈ 3 AI calls each). */
 export const MAX_CHECKED = 300;
 
+/** Wait before the same batch can be checked again. */
+export const ACCURACY_COOLDOWN_MS = 10 * 60_000;
+
 const running = new Set<string>();
 export const batchAccuracyRunning = (batchId: string) => running.has(batchId);
 
 export interface BatchAccuracyDeps {
   db: SupabaseClient;
   match: (photo: Buffer, ctx?: { sets?: string[] }) => Promise<BulkMatchResult>;
+  reserve?: (calls: number) => Promise<Reservation>;
+  env?: NodeJS.ProcessEnv;
 }
 
 interface AnsweredItem {
@@ -52,12 +63,15 @@ export async function checkBatchAccuracy(batchId: string, deps: BatchAccuracyDep
 
   const results: Array<{ item: AnsweredItem; rank: number | null; got: BatchAccuracyMiss["got"] } | null> = [];
   let next = 0;
+  let stopped: string | null = null;
   await Promise.all(Array.from({ length: Math.min(CONCURRENCY, items.length) }, async () => {
-    while (next < items.length) {
+    while (next < items.length && !stopped) {
       const item = items[next++];
+      const budget = await reserveFor(deps, CALLS_PER_MATCH);
+      if (!budget.allowed) { stopped = budget.reason; break; }
       try {
         const photo = await forMatching(await download(deps.db, item.original_path));
-        const result = await deps.match(photo, sets.length ? { sets } : undefined);
+        const result = await inMatchSlot(() => deps.match(photo, sets.length ? { sets } : undefined));
         const at = result.candidates.findIndex((c) => c.pinhuntId === item.matched_pinhunt_id);
         const top = result.candidates[0];
         results.push({ item, rank: at >= 0 ? at + 1 : null, got: top ? { pinhuntId: top.pinhuntId, title: top.title, confidence: top.confidence } : null });
@@ -76,6 +90,7 @@ export async function checkBatchAccuracy(batchId: string, deps: BatchAccuracyDep
     top1: ok.filter((r) => r.rank === 1).length,
     top5: ok.filter((r) => r.rank !== null).length,
     errors: results.length - ok.length,
+    ...(stopped ? { stopped, notChecked: items.length - results.length } : {}),
     misses: ok
       .filter((r) => r.rank !== 1)
       .sort((a, b) => order.get(a.item.id)! - order.get(b.item.id)!)
@@ -95,9 +110,17 @@ export async function checkBatchAccuracy(batchId: string, deps: BatchAccuracyDep
   return report;
 }
 
-/** Start a check in the background; false if one is already running for this batch. */
-export function startBatchAccuracyCheck(batchId: string, deps: BatchAccuracyDeps): boolean {
-  if (running.has(batchId)) return false;
+export type StartRefusal = "running_here" | "running_elsewhere" | "cooldown";
+
+/**
+ * Start a check in the background, or say why not: one is already running
+ * for this batch, another batch's check is running on this server, or this
+ * batch was checked less than ACCURACY_COOLDOWN_MS ago (`lastAt`).
+ */
+export function startBatchAccuracyCheck(batchId: string, deps: BatchAccuracyDeps, lastAt?: string | null, now = Date.now()): true | StartRefusal {
+  if (running.has(batchId)) return "running_here";
+  if (running.size > 0) return "running_elsewhere";
+  if (lastAt && now - Date.parse(lastAt) < ACCURACY_COOLDOWN_MS) return "cooldown";
   running.add(batchId);
   void checkBatchAccuracy(batchId, deps)
     .catch((err) => console.error(`[bulk-images] accuracy check of ${batchId} failed:`, err))

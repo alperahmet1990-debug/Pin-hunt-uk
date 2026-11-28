@@ -32,6 +32,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import sharp from "sharp";
 import type { BulkMatchResult, PinBox } from "./match";
 import { batchSets } from "./batchStats";
+import { CALLS_PER_MATCH, reserveAiCalls, type Reservation } from "./aiBudget";
 
 export const BUCKET = "bulk-image-matcher";
 const STALE_CLAIM_MS = 10 * 60_000;
@@ -40,6 +41,8 @@ export interface PipelineDeps {
   db: SupabaseClient;
   /** Match one photo; `sets` are searched first (the batch's set hints). */
   match: (photo: Buffer, ctx?: { sets?: string[] }) => Promise<BulkMatchResult>;
+  /** Reserve a match's AI calls in the daily budget (default: migration 087's bulk_reserve_ai_calls). */
+  reserve?: (calls: number) => Promise<Reservation>;
   clean: (photo: Buffer) => Promise<Buffer>;
   env?: NodeJS.ProcessEnv;
   now?: () => number;
@@ -66,6 +69,16 @@ class Limiter {
       this.waiting.shift()?.();
     }
   }
+}
+
+/** Reserve AI calls through the injected budget, or migration 087's function. */
+export function reserveFor(deps: Pick<PipelineDeps, "db" | "reserve" | "env">, calls: number): Promise<Reservation> {
+  return deps.reserve ? deps.reserve(calls) : reserveAiCalls(deps.db, calls, deps.env ?? process.env);
+}
+
+/** Run one match inside the shared match concurrency limit (BULK_MATCH_CONCURRENCY). */
+export function inMatchSlot<T>(fn: () => Promise<T>): Promise<T> {
+  return limiters.match.run(fn);
 }
 
 const limiters = {
@@ -139,7 +152,7 @@ export async function matchItem(
   item: { id: string; original_path: string; match_attempts: number },
   deps: PipelineDeps,
   sets: string[] = [],
-): Promise<"suggested" | "unmatched" | "failed" | "skipped"> {
+): Promise<"suggested" | "unmatched" | "failed" | "skipped" | { limited: string }> {
   const now = deps.now ?? Date.now;
   const { data: claimed } = await deps.db.from("bulk_image_items")
     .update({
@@ -152,6 +165,15 @@ export async function matchItem(
     .eq("id", item.id).eq("status", "uploaded")
     .select("id").maybeSingle();
   if (!claimed) return "skipped"; // someone else has it
+
+  // The daily AI budget (migration 087): counts every match, re-matches included.
+  const budget = await reserveFor(deps, CALLS_PER_MATCH);
+  if (!budget.allowed) {
+    await deps.db.from("bulk_image_items")
+      .update({ status: "uploaded", match_attempts: item.match_attempts })
+      .eq("id", item.id).eq("status", "matching");
+    return { limited: budget.reason };
+  }
 
   try {
     const photo = await forMatching(await download(deps.db, item.original_path));
@@ -299,10 +321,16 @@ async function runStage(stage: Stage, batchId: string, deps: PipelineDeps): Prom
 
     // The batch's sets, read per page so a set learned meanwhile is used straight away.
     const sets = stage === "match" ? await batchSets(deps.db, batchId).catch(() => []) : [];
-    const results = await Promise.all(items.map((item) => limiters[stage].run(() =>
+    type Outcome = Awaited<ReturnType<typeof matchItem>> | Awaited<ReturnType<typeof cleanItem>>;
+    const results = await Promise.all(items.map((item) => limiters[stage].run<Outcome>(() =>
       stage === "match"
         ? matchItem(item as Parameters<typeof matchItem>[0], deps, sets)
         : cleanItem(item as Parameters<typeof cleanItem>[0], deps))));
+    const limited = results.find((r): r is { limited: string } => typeof r === "object" && r !== null && "limited" in r);
+    if (limited) {
+      paused.set(key, limited.limited);
+      return;
+    }
     // Everything on this page was taken by another process: stop rather than spin.
     if (results.every((r) => r === "skipped")) return;
   }

@@ -78,5 +78,22 @@ export function createFakeDb(tables: Record<string, Row[]> = {}) {
     },
   };
 
-  return { db: { from, storage } as unknown as import("@supabase/supabase-js").SupabaseClient, tables, files };
+  /** Migration 087's functions: a daily AI-call budget and a one-statement stats merge. */
+  const ai = { used: 0 };
+  async function rpc(name: string, args: Record<string, unknown>) {
+    if (name === "bulk_reserve_ai_calls") {
+      const calls = Number(args.p_calls); const limit = Number(args.p_limit);
+      if (ai.used + calls <= limit) { ai.used += calls; return { data: [{ allowed: true, used: ai.used, limit_calls: limit }], error: null }; }
+      return { data: [{ allowed: false, used: ai.used, limit_calls: limit }], error: null };
+    }
+    if (name === "bulk_merge_batch_stats") {
+      const row = (tables.bulk_image_batches ?? []).find((r) => r.id === args.p_batch);
+      if (!row) return { data: null, error: null };
+      row.stats = { ...((row.stats as Row) ?? {}), ...((args.p_patch as Row) ?? {}) };
+      return { data: row.stats, error: null };
+    }
+    return { data: null, error: { message: `function ${name} not found` } };
+  }
+
+  return { db: { from, storage, rpc } as unknown as import("@supabase/supabase-js").SupabaseClient, tables, files, ai };
 }

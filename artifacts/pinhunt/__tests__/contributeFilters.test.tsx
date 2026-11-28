@@ -13,7 +13,7 @@ const mockRows = [
     allCharacters: 'Stitch', imageSource: 'reference', imageUrl: 'https://x/3.jpg', pendingCount: 0, needsBackImage: true },
 ];
 
-jest.mock('expo-router', () => ({ useRouter: () => ({ push: jest.fn() }), Stack: { Screen: () => null } }));
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: jest.fn() }), useLocalSearchParams: () => ({ filter: 'all' }), Stack: { Screen: () => null } }));
 jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));
 jest.mock('@/hooks/useFeature', () => ({ useFeature: () => ({ enabled: true, loading: false }) }));
 // The screen's filtering runs in the database (migration 077). This stand-in

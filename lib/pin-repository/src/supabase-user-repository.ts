@@ -53,7 +53,9 @@ import type {
   UserSuspension,
   ReportedMessageView,
   CatalogueImageCoverage,
+  CoveragePage,
   CoveragePageQuery,
+  CoverageSort,
   CoverageFacets,
   CoverageFacetKey,
   CoverageSummary,
@@ -112,6 +114,11 @@ function coverageRowFromDb(row: Record<string, unknown>): CatalogueImageCoverage
     needsBackImage: (row.needs_back_image as boolean | null) ?? undefined,
     missingFields: (row.missing_fields as string[] | null) ?? undefined,
   };
+}
+
+function coveragePageFromDb(data: unknown, sort: CoverageSort): CoveragePage {
+  const rows = (data ?? []) as Record<string, unknown>[];
+  return { rows: rows.map(coverageRowFromDb), total: rows.length ? Number(rows[0].total ?? rows.length) : 0, sort };
 }
 
 function generateSubmissionId(): string {
@@ -1678,8 +1685,11 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return { data: null, local: local(await this.coverageFallback) };
   }
 
-  async getCatalogueCoveragePage(q: CoveragePageQuery): Promise<{ rows: CatalogueImageCoverage[]; total: number }> {
-    const { data, local } = await this.coverageRpc('catalogue_coverage_page', {
+  /** False once the database says catalogue_coverage_page has no p_sort (088 not applied). */
+  private coverageSort = true;
+
+  async getCatalogueCoveragePage(q: CoveragePageQuery): Promise<CoveragePage> {
+    const args: Record<string, unknown> = {
       p_ids: q.ids ?? null,
       p_query: q.query?.trim() || null,
       p_filter: q.filter ?? 'all',
@@ -1689,10 +1699,19 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       p_set: q.set ?? null,
       p_offset: q.offset,
       p_limit: q.limit,
-    }, all => coveragePageLocal(all, q));
+    };
+    const wantNewest = q.sort === 'newest';
+    if (wantNewest && this.coverageSort && this.coverage077) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data, error } = await (this.client as any).rpc('catalogue_coverage_page', { ...args, p_sort: 'newest' });
+      if (!error) return coveragePageFromDb(data, 'newest');
+      if (error.code !== 'PGRST202' && error.code !== '42883') throw new Error(error.message);
+      // 077 without 088: ask again without p_sort (set order). If 077 is missing too, coverageRpc falls back.
+      this.coverageSort = false;
+    }
+    const { data, local } = await this.coverageRpc('catalogue_coverage_page', args, all => coveragePageLocal(all, q));
     if (local) return local;
-    const rows = (data ?? []) as Record<string, unknown>[];
-    return { rows: rows.map(coverageRowFromDb), total: rows.length ? Number(rows[0].total ?? rows.length) : 0 };
+    return coveragePageFromDb(data, 'set');
   }
 
   async getCatalogueCoverageSummary(facets: CoverageFacets, ownedIds: string[], facet: CoverageFacetKey | null = null): Promise<CoverageSummary> {

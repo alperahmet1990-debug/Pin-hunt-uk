@@ -1210,8 +1210,19 @@ export interface CoveragePageQuery extends CoverageFacets {
   /** Words, or a PHUK id prefix. */
   query?: string | null;
   filter?: CoverageFilter;
+  /** 'set' (default): set, title, id. 'newest': newest Pin & Pop pins first (migration 088). */
+  sort?: CoverageSort;
   offset: number;
   limit: number;
+}
+
+export type CoverageSort = 'set' | 'newest';
+
+/** One page of coverage rows. `sort` is the order actually used: 'set' while migration 088 isn't applied. */
+export interface CoveragePage {
+  rows: CatalogueImageCoverage[];
+  total: number;
+  sort?: CoverageSort;
 }
 
 export interface CoverageStats {

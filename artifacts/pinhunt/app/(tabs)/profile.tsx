@@ -290,7 +290,7 @@ export default function ProfileScreen() {
               <Section title="Beta">
                 <SettingsRow
                   icon="camera"
-                  label="Help Build the Catalogue"
+                  label="Contribute pictures"
                   onPress={() => router.push('/contribute' as any)}
                   last
                 />

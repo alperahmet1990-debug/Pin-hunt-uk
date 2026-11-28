@@ -1,5 +1,5 @@
 // Builds PRODUCTION copies of the migrations that carry a staging-only guard
-// (075, 076 search, 077), with the production guard from
+// (075, 076 search, 077, 088), with the production guard from
 // artifacts/api-server/scripts/PINANDPOP.md ("Production rollout", step 2) in
 // its place. Everything else is byte-for-byte the original; the test checks it.
 //   node scripts/catalogue-gap/build-production-migrations.mjs
@@ -7,7 +7,7 @@ import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
-export const SOURCES = ["075_pinandpop_catalogue_search.sql", "076_search_catalogue_pins.sql", "077_catalogue_coverage_paged.sql"];
+export const SOURCES = ["075_pinandpop_catalogue_search.sql", "076_search_catalogue_pins.sql", "077_catalogue_coverage_paged.sql", "088_coverage_newest_sort.sql"];
 export const OUT_DIR = "supabase/verify/production-rollout/";
 
 export const STAGING_GUARD = `  if not exists (select 1 from storage.buckets where id = 'pinhunt-staging-marker') then

@@ -29,6 +29,7 @@ jest.mock('expo-router', () => ({
   Stack: { Screen: () => null },
 }));
 jest.mock('@/components/QuickAddSheet', () => ({ QuickAddSheet: () => null }));
+jest.mock('@/hooks/useFeature', () => ({ useFeature: () => ({ enabled: false, loading: false }) }));
 jest.mock('@/components/ui/Toast', () => ({ useToast: () => ({ show: mockToast, hide: jest.fn() }) }));
 jest.mock('@/hooks/useMarketplace', () => ({ useMarketplace: () => ({ repo: mockRepo, userId: mockRepo ? 'me' : null }) }));
 jest.mock('@/context/CollectionContext', () => ({

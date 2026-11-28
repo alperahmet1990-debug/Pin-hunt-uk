@@ -56,7 +56,7 @@ const MODERATION_LINKS: LinkItem[] = [
 ];
 
 const CONTRIBUTE_LINKS: LinkItem[] = [
-  { icon: 'grid',   title: 'Help Build the Catalogue', description: 'Every catalogue pin by photo status.', href: '/contribute' as Href },
+  { icon: 'grid',   title: 'Contribute pictures', description: 'Every catalogue pin by photo status.', href: '/contribute' as Href },
 ];
 
 // eBay image ingestion is no longer the catalogue image strategy, so its

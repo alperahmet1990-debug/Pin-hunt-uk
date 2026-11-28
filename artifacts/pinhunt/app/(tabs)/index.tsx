@@ -4,12 +4,15 @@
  * Top to bottom: app icon + "PinHunt", Messages and avatar; three stat tiles
  * (Total pins, ISO, For trade) that open the matching Collection view; Find a
  * pin and Submit a new pin side by side; one slim "needs you" line when
- * something is waiting; and two compact upcoming events.
+ * something is waiting; two compact upcoming events; and, for photo
+ * contributors, "New to the catalogue" (NewPinsStrip): the newest Pin & Pop
+ * pins that still need a photo.
  *
  * Removed from Home with the maintainer's approval (#604): Recently added,
  * the Find Trades tile, Continue Collecting, the large What's Happening
  * cards, Get started and Photograph your pins. Find Trades stays on
- * Collection (For Trade and ISO tabs) and Community.
+ * Collection (For Trade and ISO tabs) and Community. "New to the catalogue"
+ * (photos for new pins) partly reverses that; see PR #784 for its approval.
  */
 import React, { useEffect, useMemo, useState } from 'react';
 import { Image, Linking, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -23,6 +26,7 @@ import { useColors } from '@/hooks/useColors';
 import { fontScale } from '@/constants/theme';
 import { useCollection } from '@/context/CollectionContext';
 import { AddPinsWelcomeSheet } from '@/components/AddPinsWelcomeSheet';
+import { NewPinsStrip } from '@/components/NewPinsStrip';
 import { useProfile } from '@/context/ProfileContext';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { useTradesWaiting } from '@/hooks/useTradesWaiting';
@@ -231,6 +235,8 @@ export default function HomeScreen() {
           </TouchableOpacity>
         )}
       </View>
+
+      <NewPinsStrip />
     </ScrollView>
     <AddPinsWelcomeSheet />
   </View>;

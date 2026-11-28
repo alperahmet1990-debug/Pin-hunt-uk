@@ -38,6 +38,7 @@ import type {
   UserSuspension,
   ReportedMessageView,
   CatalogueImageCoverage,
+  CoveragePage,
   CoveragePageQuery,
   CoverageFacets,
   CoverageFacetKey,
@@ -439,9 +440,11 @@ export interface IUserPinRepository {
    * One filtered page of coverage rows, or the rows for given pins (`ids`),
    * with the total that match (migration 077; falls back to filtering
    * getCatalogueImageCoverage on the device without it). Empty unless the
-   * caller can access 'catalogue_contributions'.
+   * caller can access 'catalogue_contributions'. `sort: 'newest'` needs
+   * migration 088; without it the page comes back in set order and says so
+   * (`sort: 'set'`).
    */
-  getCatalogueCoveragePage(q: CoveragePageQuery): Promise<{ rows: CatalogueImageCoverage[]; total: number }>;
+  getCatalogueCoveragePage(q: CoveragePageQuery): Promise<CoveragePage>;
 
   /** Counts for the contributor screen under these facets, plus one facet's choices. */
   getCatalogueCoverageSummary(facets: CoverageFacets, ownedIds: string[], facet?: CoverageFacetKey | null): Promise<CoverageSummary>;

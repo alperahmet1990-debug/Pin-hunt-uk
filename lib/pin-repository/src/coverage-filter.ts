@@ -8,7 +8,7 @@
  */
 import type {
   CatalogueImageCoverage, CoverageFacetKey, CoverageFacets, CoverageFilter,
-  CoveragePageQuery, CoverageStats, CoverageSummary,
+  CoveragePage, CoveragePageQuery, CoverageStats, CoverageSummary,
 } from './types';
 
 export const isCoveragePending = (r: CatalogueImageCoverage) => r.myStatus === 'pending' || r.pendingCount > 0;
@@ -52,15 +52,18 @@ function matchesQuery(r: CatalogueImageCoverage, query: string | null | undefine
 const compare = (a: CatalogueImageCoverage, b: CatalogueImageCoverage) =>
   a.setName.localeCompare(b.setName) || a.title.localeCompare(b.title) || a.pinhuntId.localeCompare(b.pinhuntId);
 
-export function coveragePageLocal(all: CatalogueImageCoverage[], q: CoveragePageQuery): { rows: CatalogueImageCoverage[]; total: number } {
+const newestFirst = (a: CatalogueImageCoverage, b: CatalogueImageCoverage) =>
+  b.pinhuntId.localeCompare(a.pinhuntId);
+
+export function coveragePageLocal(all: CatalogueImageCoverage[], q: CoveragePageQuery): CoveragePage {
   const ids = q.ids ? new Set(q.ids) : null;
   const match = all
     .filter(r => (!ids || ids.has(r.pinhuntId))
       && matchesCoverageFacets(r, q)
       && matchesQuery(r, q.query)
       && matchesCoverageFilter(r, q.filter))
-    .sort(compare);
-  return { rows: match.slice(q.offset, q.offset + q.limit), total: match.length };
+    .sort(q.sort === 'newest' ? newestFirst : compare);
+  return { rows: match.slice(q.offset, q.offset + q.limit), total: match.length, sort: q.sort ?? 'set' };
 }
 
 export function coverageSummaryLocal(

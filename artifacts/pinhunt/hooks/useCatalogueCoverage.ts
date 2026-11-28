@@ -21,9 +21,11 @@ import {
   type CoverageFacetKey,
   type CoverageFacets,
   type CoverageFilter,
+  type CoverageSort,
   type CoverageStats,
 } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { demoIsContributor, isDemoMode } from '@/lib/demoMode';
 
 const byId = new Map<string, CatalogueImageCoverage>();
 /** Ids already asked for, including ones the server had no row for. */
@@ -35,9 +37,19 @@ function remember(rows: CatalogueImageCoverage[]) {
   for (const r of rows) byId.set(r.pinhuntId, r);
 }
 
-function useCoverageRepository() {
+type CoverageRepository = Pick<ReturnType<typeof createSupabaseUserRepository>,
+  'getCatalogueCoveragePage' | 'getCatalogueCoverageSummary' | 'getCatalogueCoverageSetTotals'>;
+
+function useCoverageRepository(): CoverageRepository | null {
   return useMemo(() => {
-    if (!isSupabaseConfigured) return null;
+    if (!isSupabaseConfigured) {
+      // Screenshot demo contributor only; never a real build (demoMode.ts).
+      if (isDemoMode && demoIsContributor()) {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return (require('@/mock-data/coverage') as typeof import('@/mock-data/coverage')).createDemoCoverage();
+      }
+      return null;
+    }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return createSupabaseUserRepository(supabase as any);
   }, []);
@@ -89,11 +101,26 @@ export function findNextContributionTarget(
   return open.find(row => ownedIds.has(row.pinhuntId)) ?? open[0];
 }
 
+/** For tests: put rows in the shared cache. */
+export function __rememberForTests(rows: CatalogueImageCoverage[]) {
+  remember(rows);
+  publish();
+}
+
 /** For tests: forget everything cached. */
 export function resetCoverageCache() {
+  newestCache = null;
   byId.clear();
   requested.clear();
   publish();
+}
+
+// Rows carry the caller's own photo status (myStatus), and the Home strip
+// answer is cached: forget both when the account signs out (security review, #784).
+if (isSupabaseConfigured && typeof supabase?.auth?.onAuthStateChange === 'function') {
+  supabase.auth.onAuthStateChange(event => {
+    if (event === 'SIGNED_OUT') resetCoverageCache();
+  });
 }
 
 const ID_CHUNK = 1000;
@@ -145,6 +172,8 @@ export interface CoverageView {
   filter: CoverageFilter;
   facets: CoverageFacets;
   mineOnly: boolean;
+  /** 'newest' needs migration 088; until then pages come back in set order (see `sort` returned). */
+  sort?: CoverageSort;
 }
 
 const PAGE = 240;
@@ -156,6 +185,9 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
   const version = useCacheVersion();
   const [ids, setIds] = useState<string[]>([]);
   const [total, setTotal] = useState(0);
+  const [appliedSort, setAppliedSort] = useState<CoverageSort>('set');
+  // True only once a first page asked for 'newest' came back in set order (088 not applied).
+  const [sortUnavailable, setSortUnavailable] = useState(false);
   const [stats, setStats] = useState<CoverageStats>(NO_STATS);
   const [setTotals, setSetTotals] = useState<Record<string, { total: number; withPhoto: number }>>({});
   const [loading, setLoading] = useState(true);
@@ -195,6 +227,7 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
         ids: v.mineOnly ? (ownedKey ? ownedKey.split(',') : []) : null,
         query: v.query,
         filter: v.filter,
+        sort: v.sort ?? 'set',
         offset: offset.current,
         limit: PAGE,
       });
@@ -203,6 +236,8 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
       offset.current += page.rows.length;
       setIds(prev => (reset ? page.rows.map(r => r.pinhuntId) : [...prev, ...page.rows.map(r => r.pinhuntId)]));
       setTotal(page.total);
+      setAppliedSort(page.sort ?? 'set');
+      if (reset && v.sort === 'newest' && page.sort === 'set') setSortUnavailable(true);
       publish();
       void fetchSetTotals(page.rows);
     } catch (e) {
@@ -253,7 +288,62 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
   }, [load, loadStats]);
 
   return {
-    rows, total, stats, setTotals, loading: enabled && loading, loadingMore, hasMore: rows.length < total,
+    rows, total, stats, setTotals, sort: appliedSort, sortUnavailable, loading: enabled && loading, loadingMore, hasMore: rows.length < total,
     error, loadMore, refresh, loadFacet,
   };
+}
+
+/**
+ * Home "New to the catalogue": the newest Pin & Pop pins that still need a
+ * photo (no photo, none waiting for review). Empty until migration 088 is
+ * applied, rather than showing pins in set order under a "new" heading.
+ */
+const NEWEST_TTL_MS = 5 * 60 * 1000;
+/** Last Home strip answer: Home remounts often, the newest pins change about once a day (sync). */
+let newestCache: { limit: number; ids: string[]; at: number } | null = null;
+
+export function useNewestNeedingPhotos(enabled: boolean, limit: number) {
+  const repo = useCoverageRepository();
+  const version = useCacheVersion();
+  const fresh = newestCache && newestCache.limit === limit && Date.now() - newestCache.at < NEWEST_TTL_MS ? newestCache : null;
+  const [ids, setIds] = useState<string[]>(fresh?.ids ?? []);
+  const [loading, setLoading] = useState(false);
+
+  const load = useCallback(async (force = false) => {
+    if (!repo || !enabled) { setIds([]); return; }
+    const cached = newestCache;
+    if (!force && cached && cached.limit === limit && Date.now() - cached.at < NEWEST_TTL_MS) {
+      setIds(cached.ids);
+      return;
+    }
+    setLoading(true);
+    try {
+      // A few extra, so pins photographed meanwhile (cache updates) don't empty the strip.
+      const page = await repo.getCatalogueCoveragePage({ filter: 'needs', sort: 'newest', offset: 0, limit: limit * 2 });
+      remember(page.rows);
+      const next = page.sort === 'newest'
+        ? page.rows.filter(r => r.catalogueSource === 'pin_and_pop').map(r => r.pinhuntId)
+        : [];
+      newestCache = { limit, ids: next, at: Date.now() };
+      setIds(next);
+      publish();
+    } catch {
+      setIds([]); // optional section: hide it rather than show an error on Home
+    } finally {
+      setLoading(false);
+    }
+  }, [repo, enabled, limit]);
+
+  useEffect(() => { void load(); }, [load]);
+  const refresh = useCallback(() => load(true), [load]);
+
+  const rows = useMemo(
+    () => ids
+      .map(id => byId.get(id))
+      .filter((r): r is CatalogueImageCoverage => Boolean(r) && r!.imageSource === null && r!.pendingCount === 0 && r!.myStatus !== 'pending')
+      .slice(0, limit),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [ids, version, limit],
+  );
+  return { rows: enabled ? rows : [], loading: enabled && loading, refresh };
 }

@@ -13,6 +13,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { createSupabaseUserRepository, type FeatureKey } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { demoIsContributor, isDemoMode } from '@/lib/demoMode';
 
 // Per-user cache so moving between screens doesn't re-query.
 const cache = new Map<string, boolean>();
@@ -23,6 +24,8 @@ export function invalidateFeatureCache() {
 }
 
 export function useFeature(key: FeatureKey): { enabled: boolean; loading: boolean } {
+  // Screenshot demo only (never a real build): see demoIsContributor.
+  const demoEnabled = isDemoMode && key === 'catalogue_contributions' && demoIsContributor();
   const { session } = useAuth();
   const userId = session?.user?.id ?? null;
   const cacheKey = userId ? `${userId}:${key}` : null;
@@ -59,5 +62,6 @@ export function useFeature(key: FeatureKey): { enabled: boolean; loading: boolea
     return () => { cancelled = true; };
   }, [repo, cacheKey, key]);
 
+  if (demoEnabled) return { enabled: true, loading: false };
   return { enabled, loading };
 }

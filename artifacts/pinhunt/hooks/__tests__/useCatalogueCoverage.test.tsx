@@ -14,7 +14,7 @@ jest.mock('@workspace/pin-repository', () => ({
 
 import {
   findNextContributionTarget, getCachedCoverage, markCoveragePending, resetCoverageCache,
-  useCoverageFor, useCoveragePage,
+  useCoverageFor, useCoveragePage, useNewestNeedingPhotos,
 } from '../useCatalogueCoverage';
 
 const row = (id: string, o: Partial<CatalogueImageCoverage> = {}): CatalogueImageCoverage => ({
@@ -83,5 +83,76 @@ describe('useCoveragePage', () => {
       ids: ['PHUK-8', 'PHUK-9'], query: 'stitch', filter: 'needs', year: 2024, offset: 0, limit: 240,
     }));
     expect(mockRepo.getCatalogueCoverageSummary).toHaveBeenCalledWith({ year: 2024 }, ['PHUK-8', 'PHUK-9']);
+  });
+});
+
+describe('useCoveragePage sort', () => {
+  type View = { query: string; filter: 'needs'; facets: Record<string, never>; mineOnly: boolean; sort: 'set' | 'newest' };
+  const view = (sort: 'set' | 'newest'): View => ({ query: '', filter: 'needs', facets: {}, mineOnly: false, sort });
+
+  it('reports newest as unavailable only after a newest page comes back in set order', async () => {
+    mockRepo.getCatalogueCoveragePage.mockResolvedValue({ rows: [row('PHUK-1')], total: 1, sort: 'set' });
+    const hook = await renderHook(({ v }: { v: View }) => useCoveragePage(true, v, []), { initialProps: { v: view('set') } });
+    await waitFor(() => expect(hook.result.current.loading).toBe(false));
+    expect(hook.result.current.sortUnavailable).toBe(false);
+
+    await act(async () => { hook.rerender({ v: view('newest') }); });
+    await waitFor(() => expect(mockRepo.getCatalogueCoveragePage).toHaveBeenLastCalledWith(expect.objectContaining({ sort: 'newest' })));
+    await waitFor(() => expect(hook.result.current.sortUnavailable).toBe(true));
+  });
+
+  it('stays available when the newest page really is newest', async () => {
+    mockRepo.getCatalogueCoveragePage.mockImplementation(async (q: CoveragePageQuery) => ({ rows: [row('PHUK-1')], total: 1, sort: q.sort ?? 'set' }));
+    const hook = await renderHook(({ v }: { v: View }) => useCoveragePage(true, v, []), { initialProps: { v: view('set') } });
+    await act(async () => { hook.rerender({ v: view('newest') }); });
+    await waitFor(() => expect(hook.result.current.sort).toBe('newest'));
+    expect(hook.result.current.sortUnavailable).toBe(false);
+  });
+});
+
+describe('useNewestNeedingPhotos', () => {
+  it('asks for the newest pins needing a photo and keeps only Pin & Pop ones', async () => {
+    mockRepo.getCatalogueCoveragePage.mockResolvedValue({
+      rows: [
+        row('PHUK-10000009', { catalogueSource: 'pin_and_pop' }),
+        row('PHUK-00000042', { catalogueSource: 'pinhunt' }),
+        row('PHUK-10000008', { catalogueSource: 'pin_and_pop' }),
+      ],
+      total: 3,
+      sort: 'newest',
+    });
+    const { result } = await renderHook(() => useNewestNeedingPhotos(true, 12));
+    await waitFor(() => expect(result.current.rows).toHaveLength(2));
+    expect(mockRepo.getCatalogueCoveragePage).toHaveBeenCalledWith(expect.objectContaining({ filter: 'needs', sort: 'newest', offset: 0 }));
+    expect(result.current.rows.map(r => r.pinhuntId)).toEqual(['PHUK-10000009', 'PHUK-10000008']);
+
+    // A photo sent from the strip drops that pin straight away.
+    await act(async () => { markCoveragePending('PHUK-10000009'); });
+    expect(result.current.rows.map(r => r.pinhuntId)).toEqual(['PHUK-10000008']);
+  });
+
+  it('shows nothing when the database could only answer in set order (088 not applied)', async () => {
+    mockRepo.getCatalogueCoveragePage.mockResolvedValue({ rows: [row('PHUK-10000001', { catalogueSource: 'pin_and_pop' })], total: 1, sort: 'set' });
+    const { result } = await renderHook(() => useNewestNeedingPhotos(true, 12));
+    await waitFor(() => expect(mockRepo.getCatalogueCoveragePage).toHaveBeenCalled());
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.rows).toEqual([]);
+  });
+
+  it('reuses its answer for a few minutes instead of asking again on every Home visit', async () => {
+    mockRepo.getCatalogueCoveragePage.mockResolvedValue({ rows: [row('PHUK-10000009', { catalogueSource: 'pin_and_pop' })], total: 1, sort: 'newest' });
+    const first = await renderHook(() => useNewestNeedingPhotos(true, 12));
+    await waitFor(() => expect(first.result.current.rows).toHaveLength(1));
+    const second = await renderHook(() => useNewestNeedingPhotos(true, 12));
+    expect(second.result.current.rows.map(r => r.pinhuntId)).toEqual(['PHUK-10000009']);
+    expect(mockRepo.getCatalogueCoveragePage).toHaveBeenCalledTimes(1);
+    await act(async () => { await second.result.current.refresh(); });
+    expect(mockRepo.getCatalogueCoveragePage).toHaveBeenCalledTimes(2);
+  });
+
+  it('loads nothing for people who cannot contribute', async () => {
+    const { result } = await renderHook(() => useNewestNeedingPhotos(false, 12));
+    expect(result.current.rows).toEqual([]);
+    expect(mockRepo.getCatalogueCoveragePage).not.toHaveBeenCalled();
   });
 });

@@ -1,0 +1,97 @@
+-- ============================================================
+-- Migration 088: "Newest" order for the contribute-pictures screen
+--
+-- Never applied by an agent. Apply in the STAGING Supabase SQL editor first,
+-- then the production copy (supabase/verify/production-rollout/
+-- 088_coverage_newest_sort.PRODUCTION.sql). Run AFTER 077.
+--
+-- Why: collectors are asked to photograph the pins most recently pulled from
+-- Pin & Pop (Home "New to the catalogue" → See all). catalogue_coverage_page
+-- (077) can only order by set, title, id.
+--
+-- What: catalogue_coverage_page gets one more argument, p_sort:
+--   'set'    (default) set name, title, pinhunt_id — exactly as 077.
+--   'newest' pinhunt_id descending. Pin & Pop pins are PHUK-(10,000,000 + P&P id),
+--            zero-padded, so this is the newest P&P additions first (the same
+--            order the sync uses to resume, PINANDPOP.md "Identity").
+-- The body, gate (coverage_allowed), filters and returned columns are 077's,
+-- unchanged. The 9-argument version is dropped and replaced, because keeping
+-- both would make PostgREST's named-argument calls ambiguous. Apps built
+-- before this send no p_sort and get the default; apps built after fall back
+-- to set order while this hasn't been applied.
+--
+-- No table, column, row or policy changes. RLS is untouched.
+--
+-- Rollback (returns to 077's function, in one transaction):
+--   supabase/verify/088_rollback.sql
+-- ============================================================
+
+do $$
+begin
+  if not exists (select 1 from storage.buckets where id = 'pinhunt-staging-marker') then
+    raise exception 'Not the staging project (no pinhunt-staging-marker bucket). Nothing was changed.';
+  end if;
+end $$;
+
+-- One transaction: if anything below fails, the 077 function and its grants stay as they were.
+begin;
+
+drop function if exists public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer);
+
+create or replace function public.catalogue_coverage_page(
+  p_ids text[] default null,
+  p_query text default null,
+  p_filter text default 'all',
+  p_year integer default null,
+  p_origin text default null,
+  p_character text default null,
+  p_set text default null,
+  p_offset integer default 0,
+  p_limit integer default 240,
+  p_sort text default 'set'
+)
+returns table (
+  pinhunt_id text, title text, set_name text, release_year integer, edition_type text,
+  image_url text, image_source text, pending_count integer, my_status text, origin text,
+  main_character text, all_characters text, catalogue_source text, needs_back_image boolean,
+  missing_fields text[], total bigint
+)
+language plpgsql stable security definer
+set search_path = public, pinhunt_private, extensions, pg_temp
+as $fn$
+begin
+  if not pinhunt_private.coverage_allowed() then return; end if;
+  return query execute
+    'select v.pinhunt_id, v.title, v.set_name, v.release_year, v.edition_type, v.image_url, v.image_source,'
+    ' v.pending_count, v.my_status, v.origin, v.main_character, v.all_characters, v.catalogue_source,'
+    ' v.needs_back_image, v.missing_fields, count(*) over ()'
+    ' from pinhunt_private.catalogue_coverage v where '
+    || pinhunt_private.coverage_where(p_ids, p_query, p_filter, p_year, p_origin, p_character, p_set)
+    || case when p_sort = 'newest'
+         then ' order by v.pinhunt_id desc'
+         else ' order by v.set_name, v.title, v.pinhunt_id'
+       end
+    || format(' offset %s limit %s',
+              greatest(coalesce(p_offset, 0), 0), least(greatest(coalesce(p_limit, 240), 1), 1000));
+end
+$fn$;
+
+revoke all on function public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer, text) from public;
+revoke all on function public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer, text) from anon;
+grant execute on function public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer, text) to authenticated, service_role;
+
+-- Delivered on commit.
+notify pgrst, 'reload schema';
+
+commit;
+
+-- ── Verification ──────────────────────────────────────────────────────────────
+--   select pg_get_function_identity_arguments(oid) from pg_proc where proname = 'catalogue_coverage_page';
+--     -- one row, ending in "p_sort text"
+--   select has_function_privilege('anon', 'public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer, text)', 'execute');
+--     -- false
+--   (the SQL editor runs as postgres, which isn't a contributor; check the rows in the app:
+--    Contribute pictures → Newest, or Home → New to the catalogue)
+-- ============================================================
+-- End of migration 088.
+-- ============================================================

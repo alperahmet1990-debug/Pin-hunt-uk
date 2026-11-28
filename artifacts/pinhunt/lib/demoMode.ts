@@ -95,3 +95,13 @@ export function demoAgeStatus(): 'confirmed' | 'unconfirmed' | 'declined' {
 export function demoStartsSignedOut(): boolean {
   return demoQueryParam('demo_session') === 'none';
 }
+
+/**
+ * `?demo_contributor=1` makes the demo account a photo contributor
+ * ('catalogue_contributions' on, demo coverage from mock-data/coverage.ts), so
+ * Home's "New to the catalogue", Contribute pictures and the set-page photo
+ * link can be captured. Off by default, so other screenshots are unchanged.
+ */
+export function demoIsContributor(): boolean {
+  return demoQueryParam('demo_contributor') === '1';
+}

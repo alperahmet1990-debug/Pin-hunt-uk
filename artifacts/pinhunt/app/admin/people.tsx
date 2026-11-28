@@ -49,7 +49,7 @@ const AUDIENCE_PHRASE: Record<FeatureAudience, string> = {
 };
 
 const FEATURE_LABEL: Record<string, string> = {
-  catalogue_contributions: 'Help Build the Catalogue',
+  catalogue_contributions: 'Contribute pictures',
 };
 
 type PendingChange = { user: UserAccess; isAdmin: boolean; isContributor: boolean };

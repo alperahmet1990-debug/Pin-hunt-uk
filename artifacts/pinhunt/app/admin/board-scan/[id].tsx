@@ -19,6 +19,7 @@ import {
   ActivityIndicator,
   Image,
   Modal,
+  PanResponder,
   Platform,
   Pressable,
   RefreshControl,
@@ -131,13 +132,13 @@ export function boardPoint(
 }
 
 /**
- * On-screen size of the board photo: as wide as the space allows, but never
- * taller than 45% of the window or 480 pt (min 220 pt), so the photo doesn't
- * fill the screen and the pin cards stay in view. Keeps the photo's
- * proportions. Tap a crop on a card to see a pin up close.
+ * On-screen size of the board view: as wide as the space allows, but never
+ * taller than a share of the window (min 220 pt), keeping the proportions.
+ * Reviewing: 60% of the window, at most 640 pt, so the pin cards stay in
+ * view. Drawing a box: 85%, at most 1000 pt, so corners are easy to tap.
  */
-export const BOARD_MAX_SHARE = 0.45;
-export const BOARD_MAX_HEIGHT = 480;
+export const BOARD_VIEW = { share: 0.6, maxHeight: 640 } as const;
+export const BOARD_DRAWING_VIEW = { share: 0.85, maxHeight: 1000 } as const;
 export const BOARD_MIN_HEIGHT = 220;
 
 export function fitBoard(
@@ -145,18 +146,87 @@ export function fitBoard(
   imageWidth: number,
   imageHeight: number,
   windowHeight: number,
+  view: { share: number; maxHeight: number } = BOARD_VIEW,
 ): { width: number; height: number } {
   if (areaWidth <= 0 || imageWidth <= 0 || imageHeight <= 0) return { width: 0, height: 0 };
   const aspect = imageWidth / imageHeight;
-  const maxHeight = Math.max(BOARD_MIN_HEIGHT, Math.min(BOARD_MAX_HEIGHT, windowHeight * BOARD_MAX_SHARE));
+  const maxHeight = Math.max(BOARD_MIN_HEIGHT, Math.min(view.maxHeight, windowHeight * view.share));
   const width = Math.min(areaWidth, maxHeight * aspect);
   return { width, height: width / aspect };
 }
 
-/** The button text while drawing a box: which corner to tap next, and which pin is being redrawn. */
-export function drawPrompt(drawing: { x: number; y: number } | 'armed', redrawPosition: number | null): string {
-  const step = drawing === 'armed' ? 'Tap the top-left corner' : 'Now the bottom-right corner';
-  return redrawPosition != null ? `Redrawing #${redrawPosition}: ${step.charAt(0).toLowerCase()}${step.slice(1)}… (cancel)` : `${step}… (cancel)`;
+/** Margin around the pins when zoomed to them, as a fraction of the photo. */
+export const FOCUS_MARGIN = 0.04;
+
+/**
+ * The part of the photo the pins are in: the box around every pin that isn't
+ * excluded, plus a margin, as fractions of the photo. A screenshot or a photo
+ * with lots of empty space around the board then shows its pins large. The
+ * whole photo when there are no pins yet.
+ */
+export function focusRegion(boxes: Box[], margin = FOCUS_MARGIN): Box {
+  if (!boxes.length) return { x: 0, y: 0, w: 1, h: 1 };
+  const left = Math.max(0, Math.min(...boxes.map((b) => b.x)) - margin);
+  const top = Math.max(0, Math.min(...boxes.map((b) => b.y)) - margin);
+  const right = Math.min(1, Math.max(...boxes.map((b) => b.x + b.w)) + margin);
+  const bottom = Math.min(1, Math.max(...boxes.map((b) => b.y + b.h)) + margin);
+  return { x: left, y: top, w: Math.max(0.01, right - left), h: Math.max(0.01, bottom - top) };
+}
+
+/** A point on the shown part (fractions of the view) as fractions of the whole photo. */
+export function viewToPhoto(region: Box, p: { x: number; y: number }): { x: number; y: number } {
+  return { x: region.x + p.x * region.w, y: region.y + p.y * region.h };
+}
+
+/** A box on the photo as fractions of the shown part (may fall partly outside it). */
+export function photoToView(region: Box, b: Box): Box {
+  return { x: (b.x - region.x) / region.w, y: (b.y - region.y) / region.h, w: b.w / region.w, h: b.h / region.h };
+}
+
+/** The button text while drawing a new pin's box: which corner to tap next. */
+export function drawPrompt(drawing: { x: number; y: number } | 'armed'): string {
+  return `${drawing === 'armed' ? 'Tap the top-left corner' : 'Now the bottom-right corner'}… (cancel)`;
+}
+
+export type BoxHandle = 'tl' | 'tr' | 'bl' | 'br' | 'move';
+/** Smallest box side while adjusting, as a fraction of the photo. */
+export const MIN_BOX_SIDE = 0.02;
+
+/**
+ * A box after dragging one of its handles by (dx, dy), all as fractions of
+ * the photo: a corner moves that corner (the opposite one stays put), the
+ * middle moves the whole box. Kept on the photo and never smaller than
+ * MIN_BOX_SIDE.
+ */
+export function adjustBox(start: Box, handle: BoxHandle, dx: number, dy: number): Box {
+  if (handle === 'move') {
+    const x = Math.max(0, Math.min(1 - start.w, start.x + dx));
+    const y = Math.max(0, Math.min(1 - start.h, start.y + dy));
+    return { ...start, x, y };
+  }
+  let left = start.x; let top = start.y; let right = start.x + start.w; let bottom = start.y + start.h;
+  if (handle === 'tl' || handle === 'bl') left = Math.max(0, Math.min(right - MIN_BOX_SIDE, left + dx));
+  if (handle === 'tr' || handle === 'br') right = Math.min(1, Math.max(left + MIN_BOX_SIDE, right + dx));
+  if (handle === 'tl' || handle === 'tr') top = Math.max(0, Math.min(bottom - MIN_BOX_SIDE, top + dy));
+  if (handle === 'bl' || handle === 'br') bottom = Math.min(1, Math.max(top + MIN_BOX_SIDE, bottom + dy));
+  return { x: left, y: top, w: right - left, h: bottom - top };
+}
+
+/** One draggable part of the box being adjusted: reports how far it was dragged, in points. */
+function DragHandle({ style, onStart, onMove, label }: {
+  style: object; onStart: () => void; onMove: (dx: number, dy: number) => void; label: string;
+}) {
+  const cb = useRef({ onStart, onMove });
+  cb.current = { onStart, onMove };
+  const responder = useMemo(() => PanResponder.create({
+    onStartShouldSetPanResponder: () => true,
+    onMoveShouldSetPanResponder: () => true,
+    // Keep the drag: don't let the page scroll take it over.
+    onPanResponderTerminationRequest: () => false,
+    onPanResponderGrant: () => cb.current.onStart(),
+    onPanResponderMove: (_e, g) => cb.current.onMove(g.dx, g.dy),
+  }), []);
+  return <View accessibilityLabel={label} style={style} {...responder.panHandlers} />;
 }
 
 function pct(n: number | null) { return n == null ? '—' : `${Math.round(n * 100)}%`; }
@@ -177,11 +247,14 @@ export default function AdminBoardScanScreen() {
   const [filter, setFilter] = useState<Filter>('review');
   const [selected, setSelected] = useState<string | null>(null);
   const [boardAreaWidth, setBoardAreaWidth] = useState(0);
+  /** Show the whole photo instead of zooming to the pins (e.g. to add a pin outside them). */
+  const [showWhole, setShowWhole] = useState(false);
   const { height: windowHeight } = useWindowDimensions();
   const [drawing, setDrawing] = useState<{ x: number; y: number } | null | 'armed'>(null);
   const [searchFor, setSearchFor] = useState<{ itemId: string } | { box: Box } | null>(null);
-  /** The pin whose box is being redrawn (taps on the board then redraw it instead of adding a pin). */
-  const [redrawFor, setRedrawFor] = useState<string | null>(null);
+  /** The pin whose box is being adjusted, and the box so far (fractions of the photo). */
+  const [editing, setEditing] = useState<{ itemId: string; box: Box } | null>(null);
+  const dragStart = useRef<Box | null>(null);
   const pageRef = useRef<ScrollView>(null);
   /** A picture opened full size (tap any picture on a card). */
   const [zoom, setZoom] = useState<{ uri: string; label: string; reference?: boolean } | null>(null);
@@ -253,19 +326,23 @@ export default function AdminBoardScanScreen() {
     }
     await load();
   });
-  const redraw = (itemId: string, box: Box) => act(`${itemId}:redraw`, async () => {
-    await api(`/${id}/items/${itemId}/box`, { method: 'POST', body: JSON.stringify({ box }) });
-    setNotice('Box redrawn. The pin was cropped and matched again.');
-    await load();
-  });
-  const startRedraw = (itemId: string) => {
-    setRedrawFor(itemId);
-    setSelected(itemId);
-    setDrawing('armed');
+  const saveBox = () => {
+    if (!editing) return;
+    const { itemId, box } = editing;
+    return act(`${itemId}:box`, async () => {
+      await api(`/${id}/items/${itemId}/box`, { method: 'POST', body: JSON.stringify({ box }) });
+      setEditing(null);
+      setNotice('Box saved. The pin was cropped and matched again.');
+      await load();
+    });
+  };
+  const startAdjust = (item: { id: string; box: Box }) => {
+    setDrawing(null);
+    setEditing({ itemId: item.id, box: item.box });
+    setSelected(item.id);
     setNotice(null);
     pageRef.current?.scrollTo({ y: 0, animated: true });
   };
-  const cancelDrawing = () => { setDrawing(null); setRedrawFor(null); };
   const clean = (itemId: string) => act(`${itemId}:clean`, async () => {
     const r = await api(`/${id}/items/${itemId}/clean`, { method: 'POST', body: JSON.stringify({ force: true }) });
     if (r.item.cleanup_status !== 'done') setNotice(r.item.cleanup_note ?? 'Not cleaned.');
@@ -313,8 +390,13 @@ export default function AdminBoardScanScreen() {
   });
 
   // ── Adding a missed pin: tap the top-left, then the bottom-right corner ──
+  const region = useMemo(
+    () => (showWhole || !data ? { x: 0, y: 0, w: 1, h: 1 } : focusRegion(data.items.filter((i) => i.decision !== 'excluded').map((i) => i.box))),
+    [showWhole, data],
+  );
+  const zoomed = region.w < 0.999 || region.h < 0.999;
   const { width: boardWidth, height: boardHeight } = data
-    ? fitBoard(boardAreaWidth, data.scan.image_width, data.scan.image_height, windowHeight)
+    ? fitBoard(boardAreaWidth, region.w * data.scan.image_width, region.h * data.scan.image_height, windowHeight, drawing || editing ? BOARD_DRAWING_VIEW : BOARD_VIEW)
     : { width: 0, height: 0 };
   const boardRef = useRef<View>(null);
   const onBoardPress = (e: GestureResponderEvent) => {
@@ -322,17 +404,14 @@ export default function AdminBoardScanScreen() {
     const node = boardRef.current as unknown as { getBoundingClientRect?: () => { left: number; top: number } } | null;
     const rect = Platform.OS === 'web' && node?.getBoundingClientRect ? node.getBoundingClientRect() : null;
     const scroll = typeof window !== 'undefined' ? { x: window.scrollX, y: window.scrollY } : { x: 0, y: 0 };
-    const { x, y } = boardPoint(e.nativeEvent, rect, scroll, boardWidth, boardHeight);
+    const { x, y } = viewToPhoto(region, boardPoint(e.nativeEvent, rect, scroll, boardWidth, boardHeight));
     if (drawing === 'armed') { setDrawing({ x, y }); return; }
     const box = {
       x: Math.max(0, Math.min(drawing.x, x)), y: Math.max(0, Math.min(drawing.y, y)),
       w: Math.abs(x - drawing.x), h: Math.abs(y - drawing.y),
     };
     setDrawing(null);
-    const redrawing = redrawFor;
-    setRedrawFor(null);
     if (box.w < 0.01 || box.h < 0.01) { setNotice('That box is too small — try again.'); return; }
-    if (redrawing) { void redraw(redrawing, box); return; }
     setSearchFor({ box });
   };
 
@@ -483,36 +562,80 @@ export default function AdminBoardScanScreen() {
         {scan.imageUrl ? (
           <View style={{ alignItems: 'center' }} onLayout={(e: LayoutChangeEvent) => setBoardAreaWidth(e.nativeEvent.layout.width)}>
             {boardWidth > 0 ? (
-              <Pressable ref={boardRef} onPress={onBoardPress} style={{ width: boardWidth, height: boardHeight }}>
-                <Image source={{ uri: scan.imageUrl }} style={{ width: boardWidth, height: boardHeight, borderRadius: 8 }} />
-                {data.items.map((i) => (
+              <Pressable ref={boardRef} onPress={onBoardPress} style={{ width: boardWidth, height: boardHeight, overflow: 'hidden', borderRadius: 8 }}>
+                <Image
+                  source={{ uri: scan.imageUrl }}
+                  style={{
+                    position: 'absolute',
+                    width: boardWidth / region.w, height: boardHeight / region.h,
+                    left: (-region.x * boardWidth) / region.w, top: (-region.y * boardHeight) / region.h,
+                  }}
+                />
+                {data.items.filter((i) => i.id !== editing?.itemId).map((i) => ({ i, v: photoToView(region, i.box) })).map(({ i, v }) => (
                   <Pressable
                     key={i.id}
-                    disabled={!!drawing}
-                    // While drawing, taps go through the outlines to the board.
-                    pointerEvents={drawing ? 'none' : 'auto'}
+                    disabled={!!drawing || !!editing}
+                    // While drawing or adjusting, taps go through the outlines to the board.
+                    pointerEvents={drawing || editing ? 'none' : 'auto'}
                     onPress={() => { setSelected(i.id); setFilter('all'); }}
                     style={{
                       position: 'absolute',
-                      left: i.box.x * boardWidth, top: i.box.y * boardHeight,
-                      width: i.box.w * boardWidth, height: i.box.h * boardHeight,
+                      left: v.x * boardWidth, top: v.y * boardHeight,
+                      width: v.w * boardWidth, height: v.h * boardHeight,
                       borderWidth: selected === i.id ? 3 : 2, borderColor: outline(i), borderRadius: 4,
                     }}
                   >
                     <Text style={[styles.tag, { backgroundColor: outline(i) }]}>{i.position}</Text>
                   </Pressable>
                 ))}
+                {editing ? (() => {
+                  const v = photoToView(region, editing.box);
+                  const L = v.x * boardWidth; const T = v.y * boardHeight; const W = v.w * boardWidth; const H = v.h * boardHeight;
+                  const drag = (handle: BoxHandle) => ({
+                    onStart: () => { dragStart.current = editing.box; },
+                    onMove: (dx: number, dy: number) => {
+                      const start = dragStart.current ?? editing.box;
+                      setEditing((e) => e && { ...e, box: adjustBox(start, handle, (dx / boardWidth) * region.w, (dy / boardHeight) * region.h) });
+                    },
+                  });
+                  const corner = (handle: BoxHandle, cx: number, cy: number, label: string) => (
+                    <DragHandle key={handle} label={label} {...drag(handle)}
+                      style={[styles.handle, { left: cx - 11, top: cy - 11 }, Platform.OS === 'web' ? ({ cursor: handle === 'tl' || handle === 'br' ? 'nwse-resize' : 'nesw-resize' } as object) : null]} />
+                  );
+                  return (
+                    <>
+                      <DragHandle label="Move the box" {...drag('move')}
+                        style={[{ position: 'absolute', left: L, top: T, width: W, height: H, borderWidth: 3, borderColor: '#E0A100', borderRadius: 4, backgroundColor: 'rgba(224,161,0,0.12)' },
+                          Platform.OS === 'web' ? ({ cursor: 'move' } as object) : null]} />
+                      {corner('tl', L, T, 'Drag the top-left corner')}
+                      {corner('tr', L + W, T, 'Drag the top-right corner')}
+                      {corner('bl', L, T + H, 'Drag the bottom-left corner')}
+                      {corner('br', L + W, T + H, 'Drag the bottom-right corner')}
+                    </>
+                  );
+                })() : null}
                 {drawing && drawing !== 'armed' ? (
-                  <View style={[styles.dot, { left: drawing.x * boardWidth - 5, top: drawing.y * boardHeight - 5 }]} />
+                  <View style={[styles.dot, { left: ((drawing.x - region.x) / region.w) * boardWidth - 5, top: ((drawing.y - region.y) / region.h) * boardHeight - 5 }]} />
                 ) : null}
               </Pressable>
             ) : null}
           </View>
         ) : null}
         <View style={styles.actions}>
-          {drawing
-            ? btn('draw', drawPrompt(drawing, redrawFor ? data.items.find((x) => x.id === redrawFor)?.position ?? null : null), cancelDrawing)
+          {editing ? (
+            <>
+              <Text style={[styles.small, { color: colors.homeInk, flexBasis: '100%' }]}>
+                Adjusting #{data.items.find((x) => x.id === editing.itemId)?.position}: drag a corner to resize, or the middle to move it.
+              </Text>
+              {btn(`${editing.itemId}:box`, busy === `${editing.itemId}:box` ? 'Saving…' : 'Save box', () => { void saveBox(); }, 'primary')}
+              {btn('box-cancel', 'Cancel', () => setEditing(null))}
+            </>
+          ) : drawing
+            ? btn('draw', drawPrompt(drawing), () => setDrawing(null))
             : btn('draw', 'Add a missed pin', () => setDrawing('armed'), 'plain', processing)}
+          {zoomed || showWhole
+            ? btn('zoom', showWhole ? 'Zoom to pins' : 'Show whole photo', () => setShowWhole((v) => !v))
+            : null}
         </View>
 
         {/* Filters */}
@@ -652,7 +775,7 @@ export default function AdminBoardScanScreen() {
                         : btn(`${i.id}:confirm`, 'Confirm match', () => patch(i.id, { action: 'confirm' }), 'primary')
                       : null}
                     {btn(`${i.id}:search`, target ? 'Change pin' : 'Choose pin', () => setSearchFor({ itemId: i.id }))}
-                    {btn(`${i.id}:redraw`, busy === `${i.id}:redraw` ? 'Redrawing…' : 'Redraw box', () => startRedraw(i.id), 'plain', processing || !!drawing)}
+                    {btn(`${i.id}:adjust`, 'Adjust box', () => startAdjust(i), 'plain', processing || !!drawing || !!editing)}
                     {scan.permission_public_display && i.cleanup_status !== 'done' && target && data.config.pixianConfigured
                       ? btn(`${i.id}:clean`, 'Clean photo', () => clean(i.id)) : null}
                     {i.cleanup_status === 'done' && i.image_review === 'none' ? (
@@ -1002,6 +1125,7 @@ const styles = StyleSheet.create({
   btnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   tag: { position: 'absolute', top: -2, left: -2, color: '#fff', fontSize: 10, fontFamily: 'Inter_700Bold', paddingHorizontal: 4, borderRadius: 3, overflow: 'hidden' },
   dot: { position: 'absolute', width: 10, height: 10, borderRadius: 5, backgroundColor: '#E0A100' },
+  handle: { position: 'absolute', width: 22, height: 22, borderRadius: 11, backgroundColor: '#fff', borderWidth: 3, borderColor: '#E0A100' },
   chip: { borderWidth: 1, borderRadius: 16, paddingHorizontal: 10, paddingVertical: 5, maxWidth: 260 },
   chipText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
   itemTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },

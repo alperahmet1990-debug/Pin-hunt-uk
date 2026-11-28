@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AdminBoardScanScreen, { boardPoint, drawPrompt, fitBoard, pickGrid } from '../app/admin/board-scan/[id]';
+import AdminBoardScanScreen, { BOARD_DRAWING_VIEW, boardPoint, adjustBox, drawPrompt, fitBoard, focusRegion, photoToView, pickGrid, viewToPhoto } from '../app/admin/board-scan/[id]';
 import AdminBoardScansScreen from '../app/admin/board-scans';
 
 // Board scanning review (Step A): pins without a catalogue photo first,
@@ -370,14 +370,14 @@ describe('pick grid', () => {
 });
 
 describe('fitBoard', () => {
-  it('caps the photo at 45% of the window height, keeping its proportions', () => {
-    // A phone screenshot (9:19.5) in a 1200 pt wide column on an 800 pt window.
+  it('caps the view at 60% of the window height, keeping its proportions', () => {
     const { width, height } = fitBoard(1200, 1170, 2532, 800);
-    expect(height).toBeCloseTo(360);
-    expect(width).toBeCloseTo(360 * 1170 / 2532);
+    expect(height).toBeCloseTo(480);
+    expect(width).toBeCloseTo(480 * 1170 / 2532);
   });
-  it('never goes over 480 pt tall on a tall window', () => {
-    expect(fitBoard(2000, 2000, 1000, 1400).height).toBeCloseTo(480);
+  it('never goes over 640 pt tall while reviewing, and grows while drawing', () => {
+    expect(fitBoard(2000, 2000, 1000, 1400).height).toBeCloseTo(640);
+    expect(fitBoard(2000, 1000, 2000, 1000, BOARD_DRAWING_VIEW).height).toBeCloseTo(850);
   });
   it('uses the full width when that fits', () => {
     expect(fitBoard(390, 4032, 3024, 844)).toEqual({ width: 390, height: 390 * 3024 / 4032 });
@@ -388,23 +388,68 @@ describe('fitBoard', () => {
   });
 });
 
-describe('redrawing a pin\'s box', () => {
-  it('asks for the two corners, naming the pin, and can be cancelled', async () => {
+describe('zooming to the pins', () => {
+  it('shows only the band of a tall screenshot the pins are in, with a margin', () => {
+    // The 6 pins of a phone screenshot sit between 20% and 55% of its height.
+    const r = focusRegion([{ x: 0.05, y: 0.2, w: 0.3, h: 0.15 }, { x: 0.65, y: 0.4, w: 0.3, h: 0.15 }]);
+    expect(r.x).toBeCloseTo(0.01);
+    expect(r.y).toBeCloseTo(0.16);
+    expect(r.w).toBeCloseTo(0.98);
+    expect(r.h).toBeCloseTo(0.43);
+    // In a 1000 pt column on a 900 pt window the pins are shown about 2.3x larger than the whole photo.
+    const whole = fitBoard(1000, 1170, 2532, 900).height;
+    const zoomed = fitBoard(1000, r.w * 1170, r.h * 2532, 900).height / r.h;
+    expect(zoomed / whole).toBeGreaterThan(2);
+  });
+  it('is the whole photo when there are no pins, and stays on the photo', () => {
+    expect(focusRegion([])).toEqual({ x: 0, y: 0, w: 1, h: 1 });
+    expect(focusRegion([{ x: 0, y: 0, w: 1, h: 1 }])).toEqual({ x: 0, y: 0, w: 1, h: 1 });
+  });
+  it('maps taps and boxes between the shown part and the whole photo', () => {
+    const r = { x: 0.1, y: 0.2, w: 0.5, h: 0.4 };
+    expect(viewToPhoto(r, { x: 0.5, y: 0.5 })).toEqual({ x: 0.35, y: 0.4 });
+    const v = photoToView(r, { x: 0.35, y: 0.4, w: 0.1, h: 0.08 });
+    expect(v.x).toBeCloseTo(0.5); expect(v.y).toBeCloseTo(0.5); expect(v.w).toBeCloseTo(0.2); expect(v.h).toBeCloseTo(0.2);
+  });
+});
+
+describe('adjusting a pin\'s box', () => {
+  it('opens the box editor for that pin, and cancelling sends nothing', async () => {
     await render(<AdminBoardScanScreen />);
     await screen.findByText('Ready to review');
     // Cards are listed #2 first.
-    await fireEvent.press(screen.getAllByText('Redraw box')[0]);
-    const prompt = await screen.findByText('Redrawing #2: tap the top-left corner… (cancel)');
-    // Adding a pin is unavailable while drawing; other cards' Redraw box too.
+    await fireEvent.press(screen.getAllByText('Adjust box')[0]);
+    expect(await screen.findByText(/Adjusting #2: drag a corner to resize, or the middle to move it/)).toBeTruthy();
+    expect(screen.getByText('Save box')).toBeTruthy();
+    // Adding a pin is a separate step, not offered while adjusting.
     expect(screen.queryByText('Add a missed pin')).toBeNull();
-    await fireEvent.press(prompt);
+    await fireEvent.press(screen.getByText('Cancel'));
     expect(await screen.findByText('Add a missed pin')).toBeTruthy();
     expect(calls().some((c) => c.includes('/box'))).toBe(false);
   });
 
-  it('words the prompt for each step', () => {
-    expect(drawPrompt('armed', null)).toBe('Tap the top-left corner… (cancel)');
-    expect(drawPrompt({ x: 0.1, y: 0.1 }, null)).toBe('Now the bottom-right corner… (cancel)');
-    expect(drawPrompt({ x: 0.1, y: 0.1 }, 3)).toBe('Redrawing #3: now the bottom-right corner… (cancel)');
+  it('saves the box unchanged when nothing was dragged', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getAllByText('Adjust box')[0]);
+    await fireEvent.press(await screen.findByText('Save box'));
+    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/items/i2/box {"box":{"x":0.1,"y":0.1,"w":0.2,"h":0.2}}'));
+  });
+
+  it('moves one corner, or the whole box, and keeps it on the photo', () => {
+    const b = { x: 0.2, y: 0.2, w: 0.2, h: 0.2 };
+    const br = adjustBox(b, 'br', 0.1, 0.05);
+    expect(br.x).toBeCloseTo(0.2); expect(br.w).toBeCloseTo(0.3); expect(br.h).toBeCloseTo(0.25);
+    const tl = adjustBox(b, 'tl', -0.1, 0.05);
+    expect(tl.x).toBeCloseTo(0.1); expect(tl.y).toBeCloseTo(0.25); expect(tl.w).toBeCloseTo(0.3); expect(tl.h).toBeCloseTo(0.15);
+    expect(adjustBox(b, 'move', 0.9, -0.9)).toEqual({ x: 0.8, y: 0, w: 0.2, h: 0.2 });
+    // A corner can't cross the opposite one.
+    expect(adjustBox(b, 'tr', -0.5, 0).w).toBeCloseTo(0.02);
+    expect(adjustBox(b, 'bl', -0.5, 0.9)).toEqual({ x: 0, y: 0.2, w: expect.closeTo(0.4), h: expect.closeTo(0.8) });
+  });
+
+  it('words the add-a-pin prompt for each step', () => {
+    expect(drawPrompt('armed')).toBe('Tap the top-left corner… (cancel)');
+    expect(drawPrompt({ x: 0.1, y: 0.1 })).toBe('Now the bottom-right corner… (cancel)');
   });
 });

@@ -142,6 +142,25 @@ describe('SoldPriceCard', () => {
     expect(screen.getByText(/Based on 3 recent sales on eBay US/)).toBeTruthy();
   });
 
+  it('does not claim US was searched when only the UK is published', async () => {
+    routes.status = { status: 200, body: { state: 'no_sales', checkedAt: '2026-11-14T10:00:00Z', nextRequestAt: null, requestsOpen: true, markets: ['UK'] } };
+    await render(<SoldPriceCard pinId="PHUK-00000001" />);
+    expect(await screen.findByText(/We looked for this pin in eBay UK sold listings/)).toBeTruthy();
+    await fireEvent.press(screen.getByLabelText('US sold prices, dollars'));
+    expect(screen.getByText('We don’t check eBay US sales yet.')).toBeTruthy();
+    expect(screen.queryByText(/We looked for this pin in eBay US/)).toBeNull();
+  });
+
+  it('keeps the chosen market when the card is left and re-entered in the session', async () => {
+    routes.valuations = { status: 200, body: { valuations: [UK, US] } };
+    const first = await render(<SoldPriceCard pinId="PHUK-00000001" />);
+    await fireEvent.press(await screen.findByLabelText('US sold prices, dollars'));
+    expect(screen.getByText(/on eBay US/)).toBeTruthy();
+    await act(async () => first.unmount());
+    await render(<SoldPriceCard pinId="PHUK-00000001" />);
+    expect(await screen.findByText(/Based on 3 recent sales on eBay US/)).toBeTruthy();
+  });
+
   it('shows a cached "no sales" answer straight away', async () => {
     routes.post = { status: 200, body: { state: 'no_sales', checkedAt: '2026-11-01T10:00:00Z', nextRequestAt: '2026-12-01T10:00:00Z' } };
     await render(<SoldPriceCard pinId="PHUK-00000001" />);

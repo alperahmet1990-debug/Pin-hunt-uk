@@ -145,6 +145,18 @@ To switch it all off: set `MARKET_PRICE_REQUEST_ENABLED=false`, which hides the 
 4. Make 6 requests on different pins from one account: the 6th says "You've used today's price checks".
 5. Set the month's `limit_credits` to the current used amount. The next request says "Price checks aren't available right now", and usage doesn't move.
 
+## Price pins from the app (App Creator)
+
+**Admin → Price Pins** runs the same batch on the API server, so you need no local env file or script. It uses the server's own Soldgraph key and Supabase service key.
+
+- **Which pins:** the most collected (owned, for trade and ISO entries per pin, verified and not archived), or PinHunt IDs you paste.
+- **Re-check after (days):** default 30. Pins priced (or found to have no sales) more recently are skipped for free, so pressing it again each month only pays for pins whose answer is over 30 days old. Keep `MARKET_PRICE_REQUEST_CACHE_DAYS` on the API host the same.
+- **Credit ceiling:** the most one run may spend (up to 10,000).
+- **Check cost** is free. **Price N pins** asks you to confirm the planned credits, then the run goes on in the background; the screen shows progress and has a **Stop** button.
+- It needs on the host: `SOLDGRAPH_ENABLED=true`, `SOLDGRAPH_API_KEY`, `MARKET_VALUATION_V2_ENABLED=true` and `MARKET_VALUATION_PUBLISHED_MARKETS`. It doesn't need `MARKET_PRICE_REQUEST_ENABLED` (that's the collector button). The month must have a hard-stop budget row.
+- One run at a time per server. A deploy or restart ends a run; running the same selection again carries on.
+- Routes: `GET /api/admin/price-batch`, `POST /api/admin/price-batch/plan`, `/run`, `/stop` (`src/routes/price-batch.ts`, `src/services/market/price-request/admin-batch.ts`). App Creator only.
+
 ## Batch pricing: `scripts/market-price-batch.mjs`
 
 The question is whether to price every 2025–26 pin up front: **18,608 pins**. The batch script does it in capped runs, through the same request path as **Get a price** (`startPriceRequest()` with `origin: "batch"`). It runs on your machine, against **staging only** (the staging guard refuses anything else), like `market-refresh.mjs`.

@@ -15,6 +15,8 @@ export class BatchStoreError extends Error {
 
 const PAGE = 1000;
 const IN_CHUNK = 100;
+/** Upper bound on collection rows read to rank the most collected pins. */
+const MAX_COLLECTION_ROWS = 500_000;
 type Row = Record<string, unknown>;
 const chunk = <T>(list: T[], size: number): T[][] =>
   Array.from({ length: Math.ceil(list.length / size) }, (_, i) => list.slice(i * size, i * size + size));
@@ -64,6 +66,45 @@ export class SupabaseBatchStore implements BatchStore {
     }
     const end = q.limit === null ? undefined : q.offset + q.limit;
     return all.slice(q.offset, end);
+  }
+
+  /**
+   * The most collected pins, most first: owned, for-trade and ISO entries per
+   * pin, counted over user_pins (service role, counts only, never who). Only
+   * verified, non-archived pins. Ties keep the PinHunt ID order.
+   */
+  async popularPinhuntIds(count: number): Promise<string[]> {
+    const tally = new Map<string, number>();
+    for (let from = 0; from < MAX_COLLECTION_ROWS; from += PAGE) {
+      const { data, error } = await this.db
+        .from("user_pins")
+        .select("pin_id")
+        .in("status", ["owned", "for_trade", "wanted"])
+        .order("id", { ascending: true })
+        .range(from, from + PAGE - 1);
+      if (error) throw new BatchStoreError("count collections");
+      const rows = (data ?? []) as Row[];
+      for (const r of rows) if (typeof r.pin_id === "string") tally.set(r.pin_id, (tally.get(r.pin_id) ?? 0) + 1);
+      if (rows.length < PAGE) break;
+    }
+    const ranked = [...tally.entries()].sort((a, b) => b[1] - a[1]).map(([id]) => id);
+    const byUuid = new Map<string, string>();
+    // Read a little past `count`, since some of the top pins may be unverified or archived.
+    for (const part of chunk(ranked.slice(0, Math.max(count * 2, count + 50)), IN_CHUNK)) {
+      const { data, error } = await this.db
+        .from("pins")
+        .select("id, pinhunt_id")
+        .in("id", part)
+        .eq("verification_status", "verified")
+        .neq("catalogue_status", "archived");
+      if (error) throw new BatchStoreError("list pins");
+      for (const r of (data ?? []) as Row[]) if (typeof r.id === "string" && typeof r.pinhunt_id === "string") byUuid.set(r.id, r.pinhunt_id);
+    }
+    const rank = new Map(ranked.map((id, i) => [id, i]));
+    return [...byUuid.entries()]
+      .sort((a, b) => (rank.get(a[0])! - rank.get(b[0])!) || a[1].localeCompare(b[1]))
+      .slice(0, count)
+      .map(([, pinhuntId]) => pinhuntId);
   }
 
   async recentlyAnswered(pinUuids: string[], sources: string[], sinceIso: string): Promise<Set<string>> {

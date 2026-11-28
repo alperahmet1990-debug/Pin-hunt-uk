@@ -19,6 +19,7 @@ import { useColors } from '@/hooks/useColors';
 const APP_CREATOR_ROUTES = new Set([
   'catalogue', 'pin', 'import', 'catalogue-validation', 'image-backfill',
   'ebay-image-dryrun', 'vision-test', 'research-review', 'bulk-images', 'board-scans', 'board-scan',
+  'price-pins',
 ]);
 
 export default function AdminLayout() {

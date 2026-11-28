@@ -11,6 +11,8 @@ import { createSoldgraphClientFromEnv } from "../../soldgraph/factory";
 import { SupabaseRefreshStore } from "../refresh/store";
 import type { PriceRequestDeps } from "./service";
 import { SupabasePriceRequestStore } from "./store";
+import { SupabaseBatchStore } from "./batch-store";
+import type { AdminBatchDeps } from "./admin-batch";
 
 let cached: { key: string; db: SupabaseClient } | null = null;
 
@@ -38,5 +40,20 @@ export function createPriceRequestDeps(env: NodeJS.ProcessEnv = process.env): Pr
       warn: (obj, msg) => logger.warn(obj, msg),
       error: (obj, msg) => logger.error(obj, msg),
     },
+  };
+}
+
+/** Dependencies for the admin "Price pins" run (admin-batch.ts). Null without the service key. */
+export function createAdminBatchDeps(env: NodeJS.ProcessEnv = process.env): AdminBatchDeps | null {
+  const db = serviceClient(env);
+  const request = createPriceRequestDeps(env);
+  if (!db || !request) return null;
+  const store = new SupabaseBatchStore(db, env);
+  const { env: _env, ...rest } = request;
+  return {
+    store,
+    request: rest,
+    env,
+    popularPinhuntIds: count => store.popularPinhuntIds(count),
   };
 }

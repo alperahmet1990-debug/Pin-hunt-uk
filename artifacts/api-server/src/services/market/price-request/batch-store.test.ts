@@ -65,4 +65,17 @@ describe("SupabaseBatchStore", () => {
     expect(op(c, "eq")).toEqual([["status", "complete"]]);
     expect(op(c, "gt")).toEqual([["finished_at", "2026-05-18T00:00:00.000Z"]]);
   });
+
+  it("ranks the most collected verified pins by owned, for-trade and ISO entries", async () => {
+    const { db, calls } = fakeDb(c => c.table === "user_pins"
+      ? [{ pin_id: "u1" }, { pin_id: "u2" }, { pin_id: "u2" }, { pin_id: "u3" }, { pin_id: "u3" }, { pin_id: "u3" }]
+      // u3 is unverified, so the pins query leaves it out.
+      : [{ id: "u1", pinhunt_id: "PHUK-1" }, { id: "u2", pinhunt_id: "PHUK-2" }]);
+    const out = await new SupabaseBatchStore(db).popularPinhuntIds(2);
+    expect(out).toEqual(["PHUK-2", "PHUK-1"]);
+    expect(op(calls[0], "in")).toEqual([["status", ["owned", "for_trade", "wanted"]]]);
+    expect(op(calls[0], "select")).toEqual([["pin_id"]]);
+    expect(op(calls[1], "eq")).toEqual([["verification_status", "verified"]]);
+    expect(op(calls[1], "neq")).toEqual([["catalogue_status", "archived"]]);
+  });
 });

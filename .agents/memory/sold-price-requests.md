@@ -13,5 +13,5 @@ description: How the on-demand eBay sold-price request (#611, PR #610) is wired 
 - **The budget reserve is best effort** (checked outside the lock); the monthly hard stop is exact. The global-cap 429 carries no `retryAfter` (it would reveal other users' timing).
 - **No listings or links in the app** until LAUNCH-BLOCKERS L1 (eBay terms) is resolved.
 - **Maintainer decisions (14 Nov 2026):** no account-age or anonymous-user restriction for now; reserve default stays 0.
-- **Batch is designed, not built:** same entry point with `origin: "batch"`; see `artifacts/api-server/scripts/PRICE-REQUEST.md`.
+- **Batch is built:** `scripts/market-price-batch.mjs` (maintainer, local) and **Admin → Price Pins** (`app/admin/price-pins.tsx` → `/api/admin/price-batch/*`, App Creator only). Both call `runBatch()` with `origin: "batch"`. The admin run is one in-memory job per process (a restart ends it; re-running resumes via the request cache), default re-check window 30 days, and needs `confirmCredits` equal to the plan. "Most collected" counts `user_pins` owned/for_trade/wanted rows per pin.
 - **Screenshots:** sold-price routes in `scripts/screenshot-routes.json` use the harness's `api` mocks and anchor on "Where it lives" (exists on main), so `--base origin/main` captures a real before.

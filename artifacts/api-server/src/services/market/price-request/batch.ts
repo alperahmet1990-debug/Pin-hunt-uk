@@ -97,6 +97,10 @@ export interface BatchDeps {
   start?: (input: StartInput, deps: PriceRequestDeps) => Promise<StartResult>;
   /** Progress lines while applying (counts only). */
   progress?: (line: string) => void;
+  /** Called after every pin while applying (the admin "Price pins" screen polls this). */
+  onPin?: (p: { tried: number; total: number; creditsSpent: number; counts: BatchCounts }) => void;
+  /** Checked before each pin; true stops the run there (the admin Stop button). */
+  shouldStop?: () => boolean;
 }
 
 // ─── Arguments ───────────────────────────────────────────────────────────────
@@ -223,7 +227,7 @@ export interface BatchResult {
   counts: BatchCounts;
   pinsTried: number;
   creditsSpent: number;
-  stoppedBy?: "ceiling" | "budget" | "unavailable" | "errors";
+  stoppedBy?: "ceiling" | "budget" | "unavailable" | "errors" | "stopped";
   stopDetail?: string;
   budgetAfter?: { usedCredits: number; limitCredits: number };
 }
@@ -328,6 +332,11 @@ export async function runBatch(opts: BatchOptions, deps: BatchDeps): Promise<Bat
   let stopDetail: string | undefined;
 
   for (const pin of todo) {
+    if (deps.shouldStop?.()) {
+      stoppedBy = "stopped";
+      stopDetail = "stopped by the admin";
+      break;
+    }
     if (spent + p.creditsPerPin > ceiling) {
       stoppedBy = "ceiling";
       break;
@@ -381,6 +390,7 @@ export async function runBatch(opts: BatchOptions, deps: BatchDeps): Promise<Bat
       stopDetail = "daily cap";
       break;
     }
+    deps.onPin?.({ tried, total: todo.length, creditsSpent: spent, counts: { ...counts } });
     if (tried % 25 === 0) {
       deps.progress?.(`  ${tried}/${todo.length} pins · ${spent} credit(s) · priced ${counts.priced}, no sales ${counts.noSales}, failed ${counts.failed}`);
     }

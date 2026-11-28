@@ -67,6 +67,7 @@ const CREATOR_LINKS: LinkItem[] = [
   { icon: 'image',        title: 'Missing Images',       description: 'Add front or back photos to catalogue pins.',     href: '/admin/image-backfill' as Href },
   { icon: 'layers',       title: 'Bulk Image Matcher',   description: 'Match a batch of pin photos to the catalogue (staging).', href: '/admin/bulk-images' as Href },
   { icon: 'upload-cloud', title: 'Catalogue Import',     description: 'Preview and run spreadsheet imports.',            href: '/admin/import' as Href },
+  { icon: 'tag',          title: 'Price Pins',           description: 'eBay sold prices for many pins; re-check monthly.', href: '/admin/price-pins' as Href },
   { icon: 'check-square', title: 'Catalogue Validation', description: 'eBay checks of catalogue details.',               href: '/admin/catalogue-validation' as Href },
   { icon: 'search',       title: 'Research Review',      description: 'Check and decide on researched pins (staging).', href: '/admin/research-review' as Href },
   { icon: 'eye',          title: 'Vision Test',          description: 'Try pin recognition on a photo.',                 href: '/admin/vision-test' as Href },

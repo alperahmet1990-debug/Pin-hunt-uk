@@ -464,5 +464,10 @@
   {
     "name": "set-contribute-link",
     "path": "/set/Classics%202024?demo_contributor=1"
+  },
+  {
+    "name": "profile-contributor",
+    "path": "/profile?demo_contributor=1",
+    "scrollTo": "My Pin Submissions"
   }
 ]

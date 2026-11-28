@@ -64,3 +64,29 @@ describe("describeTokenRejection", () => {
     expect(d.serverKeyKind).toBe("missing");
   });
 });
+
+import { describeAdminRefusal, describeServiceKey } from "./tokenDiagnostics";
+
+describe("describeAdminRefusal", () => {
+  const b64 = (o: object) => Buffer.from(JSON.stringify(o)).toString("base64url");
+  const jwtKey = (role: string) => `${b64({ alg: "HS256" })}.${b64({ role })}.sig`;
+
+  it("tells the key kinds apart without their values", () => {
+    expect(describeServiceKey("sb_secret_abc")).toBe("secret");
+    expect(describeServiceKey("sb_publishable_abc")).toBe("publishable");
+    expect(describeServiceKey(jwtKey("service_role"))).toBe("service_role_jwt");
+    expect(describeServiceKey(jwtKey("anon"))).toBe("anon_jwt");
+    expect(describeServiceKey(undefined)).toBe("missing");
+  });
+
+  it("says whether the profile was found, what it says and which project was read; never the key", () => {
+    const env = { SUPABASE_URL: "https://prodref.example.test", SUPABASE_SERVICE_ROLE_KEY: "sb_publishable_secretvalue" };
+    const d = describeAdminRefusal(null, { message: "JSON object requested, multiple (or no) rows returned", code: "PGRST116" }, env);
+    expect(d).toEqual({
+      profileFound: false, isAdmin: null, dbError: "JSON object requested, multiple (or no) rows returned", dbCode: "PGRST116",
+      serverProject: "prodref.example.test", serviceKeyKind: "publishable",
+    });
+    expect(JSON.stringify(d)).not.toContain("secretvalue");
+    expect(describeAdminRefusal({ is_admin: false }, null, env)).toMatchObject({ profileFound: true, isAdmin: false });
+  });
+});

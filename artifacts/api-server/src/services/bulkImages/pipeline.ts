@@ -95,9 +95,9 @@ export async function download(db: SupabaseClient, path: string): Promise<Buffer
   return Buffer.from(await data.arrayBuffer());
 }
 
-/** Smaller copy for the vision model: enough detail to identify, fewer tokens. */
+/** Smaller copy for the vision model: enough detail to identify, fewer tokens (the board scanner's 1280 px). */
 async function forMatching(original: Buffer): Promise<Buffer> {
-  return sharp(original).resize({ width: 1024, height: 1024, fit: "inside", withoutEnlargement: true })
+  return sharp(original).resize({ width: 1280, height: 1280, fit: "inside", withoutEnlargement: true })
     .jpeg({ quality: 85 }).toBuffer();
 }
 

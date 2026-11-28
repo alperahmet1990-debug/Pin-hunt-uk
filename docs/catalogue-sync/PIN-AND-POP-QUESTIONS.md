@@ -21,7 +21,7 @@ The existing restrictions stay as they are:
 | Where | Sent to OpenAI? | When |
 |---|---|---|
 | **Live scan** (`/api/scan/identify`, used by TestFlight) | **Yes, since 12 Nov** (`services/scanReferenceImages.ts`) | In the photo-comparison step, for a candidate pin with no public photo. That's every Pin & Pop pin, as they have none. Needs the API's service-role key; without it, it's skipped. |
-| **Bulk image matcher** (merged; off unless `BULK_IMAGE_MATCHER_ENABLED=true`) | Yes, when switched on | The same comparison step, for **every** photo by default (`BULK_MATCH_ALWAYS_COMPARE=true`) |
+| **Bulk image matcher** (merged; off unless `BULK_IMAGE_MATCHER_ENABLED=true`) | Yes, when switched on | The board scanner's comparison step, for **every** photo by default (`BOARD_MATCH_ALWAYS_COMPARE`); photos also go to Google Vertex AI for the picture index when it's on |
 | **Board scanning** (branch, not merged) | Yes, once merged and used | The same step, when the ranking is unsure and the candidate has no PinHunt photo |
 | **Admin review** of contributed photos (042) | No | Shows the Pin & Pop image to admins beside a contributed photo. Display only. |
 

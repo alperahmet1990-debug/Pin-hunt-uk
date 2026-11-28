@@ -64,16 +64,62 @@ describe("matchPhoto", () => {
       ]),
     ]);
     const referenceImages = vi.fn(async () => ({ "PHUK-00000001": "https://pinandpop.example/1.jpg" }));
+    // The server downloads reference pictures itself (board scanning's references.ts).
+    const fetchImage = vi.fn(async (url: string) => `data:image/jpeg;base64,${Buffer.from(url).toString("base64")}`);
     const result = await matchPhoto(await photo(), {
       openai: ai.client, model: "m", repository: repoWith([pin("PHUK-00000001"), pin("PHUK-00000002")]),
-      referenceImages,
+      referenceImages, fetchImage,
     });
     expect(ai.calls).toHaveLength(3);
+    expect(fetchImage).toHaveBeenCalledWith("https://pinandpop.example/1.jpg");
     expect(result.candidates.map((c) => c.pinhuntId)).toEqual(["PHUK-00000001", "PHUK-00000002"]);
     expect(result.verified).toBe(true);
+    expect(result.candidates[0].verified).toBe(true);
+    // PHUK-00000002 had no picture: it isn't marked as checked, and stays capped.
+    expect(result.candidates[1].verified).toBeUndefined();
     expect(result.band).toBe("confident");
     // Reference URLs are used for matching only — never returned in candidates.
     expect(JSON.stringify(result.candidates)).not.toContain("pinandpop");
+    // The ranking is told it's a single-pin photo, not a crop of a board.
+    expect(JSON.stringify(ai.calls[1])).toContain("The photo shows ONE pin");
+    expect(JSON.stringify(ai.calls[1])).not.toContain("trading board");
+  });
+
+  it("caps a match no picture checked at 60%, and never calls it confident", async () => {
+    const ai = fakeOpenAI([
+      JSON.stringify({ characters: [], keywords: ["star"] }),
+      JSON.stringify([{ pinId: "PHUK-00000001", confidence: 97, reasoning: "x" }]),
+    ]);
+    const result = await matchPhoto(await photo(), { openai: ai.client, model: "m", repository: repoWith([pin("PHUK-00000001")]) });
+    expect(result.candidates[0].confidence).toBe(60);
+    expect(result.band).toBe("possible");
+  });
+
+  it("treats a different format of the same art as not identified", async () => {
+    const ai = fakeOpenAI([
+      JSON.stringify({ characters: ["Rhino"], keywords: ["frame"] }),
+      JSON.stringify([{ pinId: "PHUK-00000001", confidence: 90, reasoning: "Rhino" }]),
+      JSON.stringify([{ pinId: "PHUK-00000001", confidence: 98, reasoning: "same art", format_match: false }]),
+    ]);
+    const result = await matchPhoto(await photo(), {
+      openai: ai.client, model: "m", repository: repoWith([pin("PHUK-00000001")]),
+      referenceImages: async () => ({ "PHUK-00000001": "https://pinandpop.example/1.jpg" }),
+      fetchImage: async () => "data:image/jpeg;base64,AA==",
+    });
+    expect(result.candidates[0].confidence).toBeLessThanOrEqual(35);
+    expect(result.band).toBe("none");
+  });
+
+  it("adds the pins that look like the photo when the picture index is on", async () => {
+    const ai = fakeOpenAI([
+      JSON.stringify({ characters: [], keywords: [] }),
+      JSON.stringify([{ pinId: "PHUK-00000005", confidence: 70, reasoning: "looks the same" }]),
+    ]);
+    const repository = { searchPins: vi.fn(async () => []), getPinsByIds: vi.fn(async (ids: string[]) => ids.map((id) => pin(id))) } as unknown as PinRepository;
+    const pictureSearch = vi.fn(async () => ["PHUK-00000005"]);
+    const result = await matchPhoto(await photo(), { openai: ai.client, model: "m", repository, pictureSearch });
+    expect(pictureSearch).toHaveBeenCalled();
+    expect(result.candidates[0]).toMatchObject({ pinhuntId: "PHUK-00000005", lookalike: true });
   });
 
   it("never claims confidence without a reference image", async () => {

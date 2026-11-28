@@ -40,6 +40,10 @@ export interface MatchCandidate {
   verified?: boolean;
   /** Found by the picture index: its reference picture looks like the crop. */
   lookalike?: boolean;
+  /** Catalogue details, for callers that show more than the title (the Bulk Image Matcher). */
+  brand?: string;
+  edition?: string | null;
+  characters?: string[];
 }
 
 export interface CropMatch {
@@ -179,14 +183,15 @@ function maxCandidates(): number {
   return Number.isFinite(raw) && raw > 0 ? Math.floor(raw) : 150;
 }
 
-const CROP_CONTEXT = "\n\nThe photo is a crop of ONE pin from a photo of a whole pin trading board. Parts of neighbouring pins may show at the edges — identify only the pin in the centre.";
+/** What the ranking is told about the photo when matchCrop is given a crop of a board. */
+export const CROP_CONTEXT = "\n\nThe photo is a crop of ONE pin from a photo of a whole pin trading board. Parts of neighbouring pins may show at the edges — identify only the pin in the centre.";
 
 export async function matchCrop(
   crop: Buffer,
   detected: Pick<DetectedPin, "characters" | "keywords" | "text">,
   deps: MatchDeps,
   usage: TokenUsage,
-  opts: { sets?: string[] } = {},
+  opts: { sets?: string[]; context?: string } = {},
 ): Promise<CropMatch> {
   const timeout = deps.timeoutMs ?? 45_000;
   const textTerms = detected.text ? [detected.text] : [];
@@ -225,7 +230,7 @@ export async function matchCrop(
     model: deps.model,
     max_completion_tokens: 2048,
     messages: [
-      { role: "system", content: rankSystemPrompt(buildCatalogueText(catalogue), hint, CROP_CONTEXT) },
+      { role: "system", content: rankSystemPrompt(buildCatalogueText(catalogue), hint, opts.context ?? CROP_CONTEXT) },
       {
         role: "user",
         content: [
@@ -346,6 +351,9 @@ export async function matchCrop(
       reasoning: m.reasoning,
       verified: checked,
       ...(lookalikeSet.has(p.id) ? { lookalike: true } : {}),
+      brand: p.brand,
+      edition: p.edition ?? null,
+      characters: [...new Set([...(p.mainCharacter ? [p.mainCharacter] : []), ...p.characters])].slice(0, 6),
     };
   })
     // Order after the caps: an unchecked 88 capped to 60 mustn't stay above a checked 80.

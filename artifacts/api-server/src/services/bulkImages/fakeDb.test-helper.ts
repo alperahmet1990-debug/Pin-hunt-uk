@@ -1,7 +1,7 @@
 /**
  * A tiny in-memory stand-in for the Supabase client, enough for the bulk
  * image matcher's queries: from(table) with select/insert/update, the
- * filters eq/in/lt/gte, order/limit, single/maybeSingle, head counts, and
+ * filters eq/neq/in/lt/gte, order/limit, single/maybeSingle, head counts, and
  * storage upload/download. Test-only.
  */
 type Row = Record<string, unknown>;
@@ -52,6 +52,7 @@ export function createFakeDb(tables: Record<string, Row[]> = {}) {
       update(p: Row) { op = "update"; patch = p; return b; },
       eq(col: string, v: unknown) { filters.push((r) => r[col] === v); return b; },
       in(col: string, vs: unknown[]) { filters.push((r) => vs.includes(r[col])); return b; },
+      neq(col: string, v: unknown) { filters.push((r) => r[col] !== v); return b; },
       lt(col: string, v: string) { filters.push((r) => r[col] != null && String(r[col]) < v); return b; },
       gte(col: string, v: string) { filters.push((r) => r[col] != null && String(r[col]) >= v); return b; },
       order(col: string, o?: { ascending?: boolean }) { orderCol = col; orderAsc = o?.ascending ?? true; return b; },

@@ -21,6 +21,22 @@ Upload a batch of individual pin photos → review suggested catalogue matches �
 
 **Pin & Pop.** Reference images are used only for internal matching and are shown only to the App Creator, labelled "admin only". They are never stored in these tables or this bucket, and never published.
 
+## Sets and the accuracy check (migration 086)
+
+Both need `supabase/migrations/086_bulk_batch_stats.sql` (one `stats` column on `bulk_image_batches`). Without it, matching and review work as before. Naming a set, set learning and saving an accuracy report fail with a column error, and set learning only logs a warning.
+
+- **Set (optional):** name the set the photos come from when creating a batch, or later with **Name the set** / **Change sets** on the batch page (at most 5, comma-separated). It's searched first for every photo, the way board scanning uses a board's sets, so pins titled only by character ("Lumière") are told apart. Changing the sets matches the photos not decided yet again.
+- **Learned sets:** once **two** confirmed photos come from the same catalogue set (`pins.collection`), the batch learns it and matches its suggested and unmatched photos again with it first. One photo alone isn't enough, because batches can mix sets.
+- **Accuracy check (N):** matches the batch's confirmed photos again (confirmed, cleaning, cleaned or published; at most 300), **without changing them**. It reports how often your pin came first and how often it was in the top 5, and lists the misses. It runs in the background, one check per batch at a time, and is saved on the batch (`stats.accuracy`). Cost: about 3 AI calls per photo.
+
+## Correcting a match: Which pin is it?
+
+On the review card, **Which pin is it? Look-alikes & sets** opens:
+- **Looks like your pin:** the 24 catalogue pins whose reference pictures look most like the photo. This needs the picture index (`PICTURE_INDEX_ENABLED`) and costs one Vertex call, about $0.0001, each time it's opened.
+- **Browse a set:** the batch's sets and the sets of its suggestions, as chips. Tap one to see that set as a picture grid, 30 at a time (**Show more**). **Narrow** filters it, for example by a character.
+
+Tap a picture to choose it, then **Use …**. The photo is confirmed as a manual pick (`match_method = manual_search`). Pictures are the catalogue photo, or else the admin-only Pin & Pop reference. The text search and the keyboard shortcuts work as before.
+
 ## Cost controls
 
 AI calls per photo: 2, or 3 when a reference image exists. Never one call per catalogue record. Pixian: one call per confirmed photo.

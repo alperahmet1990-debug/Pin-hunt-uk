@@ -2,13 +2,30 @@ import request from "supertest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 // Gates for the bulk image matcher routes. All upstreams are mocked.
-const state = vi.hoisted(() => ({ isAppCreator: true, inserted: [] as unknown[] }));
+const state = vi.hoisted(() => ({ isAppCreator: true, inserted: [] as unknown[], pageCalls: [] as unknown[] }));
+
+vi.mock("@workspace/pin-repository", async (importOriginal) => {
+  const real = await importOriginal<typeof import("@workspace/pin-repository")>();
+  const pin = (id: string) => ({ id, title: `Pin ${id}`, collection: "Beauty and the Beast", brand: "Disney", characters: ["Lumiere"], categories: [], imageUrl: undefined });
+  return {
+    ...real,
+    createSupabasePinRepository: () => ({
+      searchPinsPage: async (q: string, f: unknown) => { state.pageCalls.push({ q, f }); return { pins: [pin("PHUK-10000001"), pin("PHUK-10000002")], total: 45 }; },
+      searchPins: async () => [pin("PHUK-10000003")],
+      getPinByPinhuntId: async (id: string) => pin(id),
+    }),
+    createSupabaseUserRepository: () => ({ getPinAndPopReferences: async () => ({}) }),
+  };
+});
 
 vi.mock("@supabase/supabase-js", () => ({
   createClient: () => ({
     auth: { getUser: async () => ({ data: { user: { id: "creator-1" } }, error: null }) },
     from: (table: string) => ({
-      select: () => ({ eq: () => ({ single: async () => ({ data: { is_app_creator: state.isAppCreator }, error: null }) }) }),
+      select: () => ({
+        eq: () => ({ single: async () => ({ data: { is_app_creator: state.isAppCreator }, error: null }) }),
+        in: async () => ({ data: [], error: null }),
+      }),
       insert: (row: unknown) => {
         state.inserted.push({ table, row });
         return { select: () => ({ single: async () => ({ data: { id: "batch-1", ...(row as object) }, error: null }) }) };
@@ -33,6 +50,7 @@ describe("bulk image matcher routes", () => {
     process.env.BULK_IMAGE_MATCHER_ENABLED = "true";
     state.isAppCreator = true;
     state.inserted = [];
+    state.pageCalls = [];
   });
   afterEach(() => { delete process.env.BULK_IMAGE_MATCHER_ENABLED; });
 
@@ -56,6 +74,24 @@ describe("bulk image matcher routes", () => {
       table: "bulk_image_batches",
       row: { supplier_name: "PinHunt team", permission_basis: "own_photos", permission_public_display: true, permission_recorded_by: "creator-1" },
     });
+  });
+
+  it("stores the batch's set, cleaned, when one is given", async () => {
+    await create({ ...valid, sets: "  Beauty and the Beast , beauty and the beast" });
+    expect(state.inserted[0]).toMatchObject({ row: { stats: { setHints: ["Beauty and the Beast"] } } });
+    await create(valid);
+    expect((state.inserted[1] as { row: Record<string, unknown> }).row.stats).toBeUndefined();
+  });
+
+  it("browses a set 30 at a time, narrowed by the search box, and says when there are more", async () => {
+    const res = await request(app).get("/api/admin/bulk-images/search").query({ set: "Beauty and the Beast", q: "lum", offset: 30 }).set("Authorization", "Bearer t");
+    expect(res.status).toBe(200);
+    expect(state.pageCalls).toEqual([{ q: "lum", f: { status: "active", collection: "Beauty and the Beast", limit: 30, offset: 30 } }]);
+    expect(res.body).toMatchObject({ total: 45, more: true });
+    expect(res.body.results.map((r: { pinhuntId: string }) => r.pinhuntId)).toEqual(["PHUK-10000001", "PHUK-10000002"]);
+    // Without a set: the plain search, as before.
+    const plain = await request(app).get("/api/admin/bulk-images/search").query({ q: "lumiere" }).set("Authorization", "Bearer t");
+    expect(plain.body).toMatchObject({ more: false, results: [{ pinhuntId: "PHUK-10000003" }] });
   });
 
   it("public display defaults to not permitted", async () => {

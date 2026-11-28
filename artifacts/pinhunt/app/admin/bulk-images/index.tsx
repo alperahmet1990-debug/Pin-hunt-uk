@@ -54,7 +54,7 @@ export default function BulkImageBatchesScreen() {
   const [error, setError] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({
-    title: '', supplierName: '', permissionBasis: 'own_photos', licence: '', permissionNotes: '',
+    title: '', supplierName: '', permissionBasis: 'own_photos', licence: '', permissionNotes: '', sets: '',
     permissionPublicDisplay: false,
   });
   const [saving, setSaving] = useState(false);
@@ -123,6 +123,10 @@ export default function BulkImageBatchesScreen() {
             <Text style={[styles.label, { color: colors.homeInk }]}>Who supplied the photos?</Text>
             <TextInput style={input} value={form.supplierName} onChangeText={(supplierName) => setForm((f) => ({ ...f, supplierName }))}
               placeholder="Name of the photographer or collector" placeholderTextColor={colors.homeMuted} />
+            <Text style={[styles.label, { color: colors.homeInk }]}>Set (optional)</Text>
+            <TextInput style={input} value={form.sets} onChangeText={(sets) => setForm((f) => ({ ...f, sets }))}
+              placeholder="e.g. Beauty and the Beast — searched first for every photo; separate several with commas"
+              placeholderTextColor={colors.homeMuted} />
             <Text style={[styles.label, { color: colors.homeInk }]}>Permission basis</Text>
             <View style={styles.chips}>
               {BASES.map((b) => {

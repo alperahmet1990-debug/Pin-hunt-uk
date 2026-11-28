@@ -64,8 +64,13 @@ interface Summary {
   counts: Record<Status, number>;
   failedByStage: Record<string, number>;
 }
+export interface BatchAccuracy {
+  at: string; checked: number; top1: number; top5: number; errors: number;
+  misses: Array<{ itemId: string; filename: string | null; expected: { pinhuntId: string; title: string | null }; got: { pinhuntId: string; title: string; confidence: number } | null; rank: number | null }>;
+}
 interface BatchData {
-  batch: { id: string; title: string; supplier_name: string; permission_public_display: boolean };
+  batch: { id: string; title: string; supplier_name: string; permission_public_display: boolean; stats?: { setHints?: string[]; accuracy?: BatchAccuracy } };
+  accuracyRunning?: boolean;
   summary: Summary;
   running: { match: boolean; clean: boolean };
   paused: { match?: string; clean?: string };
@@ -140,7 +145,7 @@ export default function BulkImageBatchScreen() {
   }, [session?.access_token, api, batchId, load]);
 
   // Refresh while anything is still being worked on.
-  const busy = !!data && (data.items.some((i) => WORKING.includes(i.status)) || data.running.match || data.running.clean);
+  const busy = !!data && (data.items.some((i) => WORKING.includes(i.status)) || data.running.match || data.running.clean || !!data.accuracyRunning);
   useEffect(() => {
     if (!busy) return;
     const t = setInterval(load, 4000);
@@ -188,6 +193,15 @@ export default function BulkImageBatchScreen() {
         {data.paused.match && <Notice text={data.paused.match} />}
         {data.paused.clean && <Notice text={data.paused.clean} />}
 
+        <SetsPanel batchId={data.batch.id} sets={data.batch.stats?.setHints ?? []} reload={load} />
+        <AccuracyPanel
+          batchId={data.batch.id}
+          report={data.batch.stats?.accuracy ?? null}
+          running={!!data.accuracyRunning}
+          answered={data.items.filter((i) => ANSWERED.includes(i.status) && !!i.matched_pinhunt_id).length}
+          reload={load}
+        />
+
         <UploadPanel batchId={data.batch.id} token={session?.access_token} onUploaded={load} />
 
         <View style={styles.tabs}>
@@ -204,6 +218,107 @@ export default function BulkImageBatchScreen() {
         {tab === 'problems' && <ProblemsPanel batchId={data.batch.id} items={data.items} reload={load} />}
       </ScrollView>
     </>
+  );
+}
+
+// ── Sets and accuracy ────────────────────────────────────────────────────────
+
+/** Photos with the reviewer's answer: what the accuracy check re-matches. */
+export const ANSWERED: Status[] = ['confirmed', 'cleaning', 'cleaned', 'published'];
+
+/** Sets searched first for every photo in the batch (typed here, or learned from two confirmations). */
+function SetsPanel({ batchId, sets, reload }: { batchId: string; sets: string[]; reload: () => void }) {
+  const colors = useColors();
+  const api = useApi();
+  const [editing, setEditing] = useState(false);
+  const [text, setText] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [note, setNote] = useState<string | null>(null);
+  const save = async () => {
+    setBusy(true);
+    setNote(null);
+    try {
+      const r = await api<{ sets: string[]; rematching: number }>(`/admin/bulk-images/batches/${batchId}/sets`, { method: 'POST', body: { sets: text } });
+      setNote(r.rematching > 0 ? `Matching ${r.rematching} photo${r.rematching === 1 ? '' : 's'} again with ${r.sets.length ? 'these sets' : 'no set'} searched first.` : null);
+      setEditing(false);
+      reload();
+    } catch (e) {
+      setNote(e instanceof Error ? e.message : 'Could not save the sets.');
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, gap: 8 }]}>
+      <Text style={[styles.meta, { color: colors.homeInk }]}>
+        {sets.length ? `Searched first: ${sets.join(' · ')}` : 'No set yet. If these photos come from one set, name it so it\'s searched first. The batch also learns a set once two confirmed photos come from it.'}
+      </Text>
+      {editing ? (
+        <>
+          <TextInput
+            value={text} onChangeText={setText} autoFocus
+            placeholder="e.g. Beauty and the Beast — separate several with commas"
+            placeholderTextColor={colors.homeMuted}
+            style={[styles.input, { color: colors.homeInk, borderColor: colors.homeLine }]}
+          />
+          <View style={styles.row}>
+            <Btn kind="primary" label={busy ? 'Saving…' : 'Save sets'} onPress={save} disabled={busy} />
+            <Btn label="Cancel" onPress={() => setEditing(false)} disabled={busy} />
+          </View>
+        </>
+      ) : (
+        <View style={styles.row}>
+          <Btn label={sets.length ? 'Change sets' : 'Name the set'} onPress={() => { setText(sets.join(', ')); setEditing(true); }} />
+        </View>
+      )}
+      {note ? <Text style={[styles.meta, { color: colors.homeMuted }]}>{note}</Text> : null}
+    </View>
+  );
+}
+
+const pct = (n: number, d: number) => (d ? `${Math.round((n / d) * 100)}%` : '—');
+
+/** Re-match the confirmed photos without changing them; right first / top 5 and the misses. */
+function AccuracyPanel({ batchId, report, running, answered, reload }: {
+  batchId: string; report: BatchAccuracy | null; running: boolean; answered: number; reload: () => void;
+}) {
+  const colors = useColors();
+  const api = useApi();
+  const [error, setError] = useState<string | null>(null);
+  if (!answered && !report) return null;
+  const start = async () => {
+    setError(null);
+    try {
+      await api(`/admin/bulk-images/batches/${batchId}/accuracy`, { method: 'POST', body: {} });
+      reload();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not start the check.');
+    }
+  };
+  return (
+    <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, gap: 8 }]}>
+      <View style={styles.row}>
+        <Btn label={running ? 'Checking…' : `Accuracy check (${answered})`} onPress={start} disabled={running || !answered} />
+        <Text style={[styles.meta, { color: colors.homeMuted, flex: 1 }]}>
+          Matches your confirmed photos again without changing them (about 3 AI calls each).
+        </Text>
+      </View>
+      {report ? (
+        <>
+          <Text style={[styles.meta, { color: colors.homeInk }]}>
+            Last check: right first {report.top1} of {report.checked} ({pct(report.top1, report.checked)}), in the top 5 {report.top5} ({pct(report.top5, report.checked)})
+            {report.errors ? ` · ${report.errors} couldn't be checked` : ''} · {new Date(report.at).toLocaleString()}
+          </Text>
+          {report.misses.map((m) => (
+            <Text key={m.itemId} style={[styles.meta, { color: colors.homeMuted }]}>
+              {m.filename ?? m.itemId}: you chose {m.expected.title ?? m.expected.pinhuntId} — matching put {m.got ? `${m.got.title} (${m.got.confidence}%)` : 'nothing'} first
+              {m.rank ? `; yours came #${m.rank}` : '; yours wasn\'t in the top 5'}
+            </Text>
+          ))}
+        </>
+      ) : null}
+      {error ? <Text style={[styles.meta, { color: colors.destructive }]}>{error}</Text> : null}
+    </View>
   );
 }
 
@@ -604,8 +719,158 @@ function ReviewPanel({ items, patchItem, reload }: {
               </View>
             );
           }))}
+
+          <WhichPin key={detail.item.id} itemId={detail.item.id} busy={busy} onUse={(c) => confirm(c, 'manual_search')} />
         </View>
       )}
+    </View>
+  );
+}
+
+// ── Which pin is it? ─────────────────────────────────────────────────────────
+
+interface PickList { results: Candidate[]; pinAndPop: Record<string, PinAndPopRef>; total?: number; more?: boolean }
+interface Picks { sets: string[]; lookalikes: Candidate[]; pinAndPop: Record<string, PinAndPopRef>; pictureIndex: boolean }
+
+/** The picture to show for a pin: its catalogue photo, else the admin-only Pin & Pop reference. */
+export function pickPicture(c: Candidate, refs: Record<string, PinAndPopRef>): string | null {
+  return c.imageUrl ?? refs[c.pinhuntId]?.imageUrl ?? null;
+}
+
+/**
+ * Correcting a match by picture: the pins that look most like the photo
+ * (picture index) and the batch's sets to browse as picture grids. Tap a
+ * picture to select it, then "Use this pin". Loaded on request (one picture
+ * search ≈ $0.0001).
+ */
+function WhichPin({ itemId, busy, onUse }: { itemId: string; busy: boolean; onUse: (c: Candidate) => void }) {
+  const colors = useColors();
+  const api = useApi();
+  const [picks, setPicks] = useState<Picks | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [set, setSet] = useState<string | null>(null);
+  const [filter, setFilter] = useState('');
+  const [browse, setBrowse] = useState<PickList | null>(null);
+  const [chosen, setChosen] = useState<Candidate | null>(null);
+
+  const open = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      setPicks(await api<Picks>(`/admin/bulk-images/items/${itemId}/picks`));
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not load look-alikes.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  const load = async (name: string, q: string, offset = 0) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const page = await api<PickList>(`/admin/bulk-images/search?set=${encodeURIComponent(name)}&q=${encodeURIComponent(q.trim())}&offset=${offset}`);
+      setBrowse((prev) => (offset > 0 && prev
+        ? { ...page, results: [...prev.results, ...page.results], pinAndPop: { ...prev.pinAndPop, ...page.pinAndPop } }
+        : page));
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not load the set.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  const pickSet = (name: string) => {
+    setChosen(null);
+    if (set === name) { setSet(null); setBrowse(null); return; }
+    setSet(name);
+    setFilter('');
+    void load(name, '');
+  };
+
+  const grid = (pins: Candidate[], refs: Record<string, PinAndPopRef>) => (
+    <View style={styles.pickGrid}>
+      {pins.map((c) => {
+        const uri = pickPicture(c, refs);
+        const on = chosen?.pinhuntId === c.pinhuntId;
+        return (
+          <Pressable key={c.pinhuntId} onPress={() => setChosen(on ? null : c)} accessibilityLabel={`Choose ${c.title}`}
+            style={[styles.pickTile, { borderColor: on ? colors.homeCoral : colors.homeLine, borderWidth: on ? 3 : 1 }]}>
+            <View style={[styles.pickImg, { backgroundColor: colors.homeAqua }]}>
+              {uri ? <Image source={{ uri }} style={{ width: '100%', height: '100%' }} resizeMode="contain" /> : null}
+            </View>
+            <Text style={[styles.meta, { color: colors.homeInk }]} numberOfLines={2}>{c.title}</Text>
+            <Text style={[styles.meta, { color: colors.homeMuted, fontSize: 11 }]} numberOfLines={1}>{c.pinhuntId}</Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+
+  if (!picks) {
+    return (
+      <View style={styles.rowWrap}>
+        <Btn icon="grid" label={loading ? 'Loading…' : 'Which pin is it? Look-alikes & sets'} onPress={open} disabled={loading} />
+        {error ? <Text style={{ color: colors.destructive, fontSize: 13 }}>{error}</Text> : null}
+      </View>
+    );
+  }
+  return (
+    <View style={{ gap: 10 }}>
+      <Text style={[styles.meta, { color: colors.homeInk, fontFamily: 'Inter_600SemiBold' }]}>Which pin is it?</Text>
+      {chosen ? (
+        <View style={styles.rowWrap}>
+          <Btn kind="primary" icon="check" label={`Use ${chosen.title}`} onPress={() => onUse(chosen)} disabled={busy} />
+          <Text style={[styles.meta, { color: colors.homeMuted }]}>{chosen.pinhuntId} · {chosen.collection}</Text>
+        </View>
+      ) : (
+        <Text style={[styles.meta, { color: colors.homeMuted }]}>Tap a picture to choose it.</Text>
+      )}
+
+      {picks.lookalikes.length ? (
+        <>
+          <Text style={[styles.meta, { color: colors.homeInk }]}>Looks like your pin</Text>
+          {grid(picks.lookalikes, picks.pinAndPop)}
+        </>
+      ) : (
+        <Text style={[styles.meta, { color: colors.homeMuted }]}>
+          {picks.pictureIndex ? 'No look-alikes found for this photo.' : 'Look-alikes appear once the picture index is switched on.'}
+        </Text>
+      )}
+
+      {picks.sets.length ? (
+        <>
+          <Text style={[styles.meta, { color: colors.homeInk }]}>Browse a set</Text>
+          <View style={styles.rowWrap}>
+            {picks.sets.map((name) => (
+              <Pressable key={name} onPress={() => pickSet(name)}
+                style={[styles.chip, { borderColor: colors.homeCoral, backgroundColor: set === name ? colors.homeCoral : 'transparent' }]}>
+                <Text style={[styles.meta, { color: set === name ? colors.homeHeroText : colors.homeInk }]}>{name}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </>
+      ) : null}
+      {set ? (
+        <>
+          <View style={styles.searchRow}>
+            <TextInput value={filter} onChangeText={setFilter} onSubmitEditing={() => load(set, filter)}
+              placeholder={`Narrow ${set} (e.g. a character)`} placeholderTextColor={colors.homeMuted}
+              style={[styles.input, { flex: 1, borderColor: colors.homeLine, color: colors.homeInk }]} />
+            <Btn icon="search" label="Narrow" onPress={() => load(set, filter)} disabled={loading} />
+          </View>
+          {browse ? (
+            browse.results.length ? (
+              <>
+                {grid(browse.results, browse.pinAndPop)}
+                <Text style={[styles.meta, { color: colors.homeMuted }]}>{browse.results.length} of {browse.total ?? browse.results.length}</Text>
+                {browse.more ? <Btn label={loading ? 'Loading…' : 'Show more'} onPress={() => load(set, filter, browse.results.length)} disabled={loading} /> : null}
+              </>
+            ) : <Text style={[styles.meta, { color: colors.homeMuted }]}>No pins in {set}{filter.trim() ? ` matching "${filter.trim()}"` : ''}.</Text>
+          ) : null}
+        </>
+      ) : null}
+      {loading ? <ActivityIndicator color={colors.homeCoral} /> : null}
+      {error ? <Text style={{ color: colors.destructive, fontSize: 13 }}>{error}</Text> : null}
     </View>
   );
 }
@@ -884,6 +1149,7 @@ const styles = StyleSheet.create({
   btn: { flexDirection: 'row', alignItems: 'center', gap: 6, borderWidth: 1, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 9 },
   badge: { alignSelf: 'flex-start', borderWidth: 1, borderRadius: 999, paddingHorizontal: 8, paddingVertical: 2 },
   card: { borderWidth: 1, borderRadius: radius.lg, padding: 14, gap: 10 },
+  row: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8 },
   compare: { flexDirection: 'row', flexWrap: 'wrap', gap: 16 },
   photoLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   photoBox: { aspectRatio: 1, borderWidth: 1, borderRadius: radius.md, overflow: 'hidden' },
@@ -894,6 +1160,9 @@ const styles = StyleSheet.create({
   input: { borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 8, fontSize: 13, fontFamily: 'Inter_400Regular' },
   searchRow: { flexDirection: 'row', gap: 8, alignItems: 'center' },
   searchResult: { flexDirection: 'row', alignItems: 'center', gap: 10, borderTopWidth: 1, paddingTop: 8 },
+  pickGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  pickTile: { width: 116, borderRadius: radius.sm, padding: 6, gap: 4 },
+  pickImg: { width: '100%', aspectRatio: 1, borderRadius: radius.sm, overflow: 'hidden' },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   gridCard: { width: 300, maxWidth: '100%' },
   cropBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', alignItems: 'center', justifyContent: 'center', padding: 16 },

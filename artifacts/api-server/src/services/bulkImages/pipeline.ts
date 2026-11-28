@@ -31,13 +31,15 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import sharp from "sharp";
 import type { BulkMatchResult, PinBox } from "./match";
+import { batchSets } from "./batchStats";
 
 export const BUCKET = "bulk-image-matcher";
 const STALE_CLAIM_MS = 10 * 60_000;
 
 export interface PipelineDeps {
   db: SupabaseClient;
-  match: (photo: Buffer) => Promise<BulkMatchResult>;
+  /** Match one photo; `sets` are searched first (the batch's set hints). */
+  match: (photo: Buffer, ctx?: { sets?: string[] }) => Promise<BulkMatchResult>;
   clean: (photo: Buffer) => Promise<Buffer>;
   env?: NodeJS.ProcessEnv;
   now?: () => number;
@@ -96,7 +98,7 @@ export async function download(db: SupabaseClient, path: string): Promise<Buffer
 }
 
 /** Smaller copy for the vision model: enough detail to identify, fewer tokens (the board scanner's 1280 px). */
-async function forMatching(original: Buffer): Promise<Buffer> {
+export async function forMatching(original: Buffer): Promise<Buffer> {
   return sharp(original).resize({ width: 1280, height: 1280, fit: "inside", withoutEnlargement: true })
     .jpeg({ quality: 85 }).toBuffer();
 }
@@ -136,6 +138,7 @@ async function countSince(db: SupabaseClient, column: string, sinceMs: number): 
 export async function matchItem(
   item: { id: string; original_path: string; match_attempts: number },
   deps: PipelineDeps,
+  sets: string[] = [],
 ): Promise<"suggested" | "unmatched" | "failed" | "skipped"> {
   const now = deps.now ?? Date.now;
   const { data: claimed } = await deps.db.from("bulk_image_items")
@@ -152,7 +155,7 @@ export async function matchItem(
 
   try {
     const photo = await forMatching(await download(deps.db, item.original_path));
-    const result = await deps.match(photo);
+    const result = await deps.match(photo, sets.length ? { sets } : undefined);
     const status = result.band === "none" || result.candidates.length === 0 ? "unmatched" : "suggested";
     const { error } = await deps.db.from("bulk_image_items").update({
       status,
@@ -294,9 +297,11 @@ async function runStage(stage: Stage, batchId: string, deps: PipelineDeps): Prom
     const items = (data ?? []) as unknown as Array<Record<string, unknown>>;
     if (items.length === 0) return;
 
+    // The batch's sets, read per page so a set learned meanwhile is used straight away.
+    const sets = stage === "match" ? await batchSets(deps.db, batchId).catch(() => []) : [];
     const results = await Promise.all(items.map((item) => limiters[stage].run(() =>
       stage === "match"
-        ? matchItem(item as Parameters<typeof matchItem>[0], deps)
+        ? matchItem(item as Parameters<typeof matchItem>[0], deps, sets)
         : cleanItem(item as Parameters<typeof cleanItem>[0], deps))));
     // Everything on this page was taken by another process: stop rather than spin.
     if (results.every((r) => r === "skipped")) return;

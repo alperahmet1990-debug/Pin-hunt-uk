@@ -25,6 +25,7 @@ import { supabase } from '@/lib/supabase';
 import { pickSubmissionImage, type PickedImage } from '@/utils/submissionImage';
 import { radius, spacing } from '@/constants/theme';
 import type { EditionType, PinSubmission } from '@workspace/pin-repository';
+import { validateSubmissionFields } from '@/utils/submissionValidation';
 
 const EDITION_TYPES: { value: EditionType; label: string }[] = [
   { value: 'unknown',        label: 'Unknown' },
@@ -151,17 +152,7 @@ export default function EditSubmissionScreen() {
   }, [refreshImageUrls]);
 
   const validate = (): boolean => {
-    const errs: Record<string, string> = {};
-    if (!proposedName.trim()) errs.proposedName = 'Pin name is required.';
-    if (!brand.trim())        errs.brand        = 'Brand is required.';
-    if (releaseYear.trim()) {
-      const y = parseInt(releaseYear, 10);
-      if (isNaN(y) || y < 1900 || y > 2030) errs.releaseYear = 'Enter a year between 1900 and 2030.';
-    }
-    if (editionSize.trim()) {
-      const s = parseInt(editionSize, 10);
-      if (isNaN(s) || s <= 0) errs.editionSize = 'Must be a positive number.';
-    }
+    const errs: Record<string, string> = { ...validateSubmissionFields({ proposedName, releaseYear, editionSize }) };
     setFieldErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -346,8 +337,8 @@ export default function EditSubmissionScreen() {
               {inp(proposedName, setProposedName, 'e.g. Mickey Mouse 50th Anniversary', { errKey: 'proposedName' })}
             </View>
             <View style={styles.field}>
-              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Brand / Source <Text style={{ color: colors.destructive }}>*</Text></Text>
-              {inp(brand, setBrand, 'e.g. Disney Parks, Loungefly', { errKey: 'brand' })}
+              <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Brand / Source</Text>
+              {inp(brand, setBrand, 'e.g. Disney Parks, Loungefly')}
             </View>
             <View style={styles.field}>
               <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>Characters (comma-separated)</Text>

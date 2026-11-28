@@ -16,7 +16,7 @@
 //     remove it, comment, and flag the item status:needs-human. Runs on every
 //     `issues`/`pull_request` labeled event as well as daily.
 //  0b. Approve with one label: when the repository owner adds `approved` to an
-//     issue (not via an app or bot), apply the allowed labels from the body's
+//     `agent-proposed` issue (not via an app or bot), apply the allowed labels from the body's
 //     `**Suggested labels:**` line, before the queue is ranked in the same run
 //     (labels added with GITHUB_TOKEN don't trigger another run).
 
@@ -70,9 +70,13 @@ export function suggestedLabels(body, current, existing) {
     !LABEL_GROUPS.some(g => g.test(l) && current.some(c => g.test(c))));
 }
 
-/** True when an issues event is the repository owner adding `approved` themselves. Exported for tests. */
-export function isOwnerApproval(event, gateAlerts = []) {
+/**
+ * True when an issues event is the repository owner adding `approved` themselves
+ * to an agent-proposed issue. `labels` are the issue's current labels. Exported for tests.
+ */
+export function isOwnerApproval(event, gateAlerts = [], labels = []) {
   return event.action === 'labeled' && event.label?.name === 'approved' &&
+    labels.includes('agent-proposed') &&
     Boolean(event.issue) && !event.issue.pull_request &&
     event.sender?.type === 'User' && event.sender.login === event.repository?.owner?.login &&
     !gateAlerts.some(a => a.gate === 'approved');
@@ -114,7 +118,7 @@ async function main() {
       const fresh = await gh(`/repos/${REPO}/issues/${item.number}`);
       const alerts = await auditGates(fresh);
       log(alerts.length ? `Gate alerts: ${JSON.stringify(alerts)}` : `#${item.number}: ${event.label.name} added by a human, OK`);
-      if (process.env.GITHUB_EVENT_NAME === 'issues' && isOwnerApproval(event, alerts)) await applySuggestedLabels(fresh);
+      if (process.env.GITHUB_EVENT_NAME === 'issues' && isOwnerApproval(event, alerts, labelNames(fresh))) await applySuggestedLabels(fresh);
     }
     if (process.env.GITHUB_EVENT_NAME !== 'issues') return;
   }

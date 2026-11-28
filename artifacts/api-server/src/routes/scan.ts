@@ -91,6 +91,16 @@ export const SCAN_LOOKALIKES_COMPARED = 3;
 export const LOOKALIKE_TIMEOUT_MS = 5_000;
 
 /**
+ * Look-alikes in collector scans need SCAN_PICTURE_SEARCH=true as well as the
+ * picture index itself: collectors' photos then also go to Google Vertex AI,
+ * so switch it on only once the app's consent sheet naming Vertex (consent
+ * version 2026-11-28) has reached phones.
+ */
+export function scanPictureSearchOn(env: NodeJS.ProcessEnv = process.env): boolean {
+  return env.SCAN_PICTURE_SEARCH === "true" && pictureIndexConfigured(env);
+}
+
+/**
  * The board scanner's confidence rules, applied to a scan's final matches:
  * only a picture comparison can make a match confident (unchecked matches
  * are capped at UNVERIFIED_MAX), a reference that showed a different format
@@ -298,7 +308,7 @@ router.post("/scan/identify", requireUser, async (req, res) => {
     // pictures look like the photo, also alongside the describe call. One
     // Google Vertex AI call (UK/EU region, ≈ $0.0001); best-effort and capped
     // at LOOKALIKE_TIMEOUT_MS, so a slow or failed search only means none.
-    const lookalikesPromise: Promise<CataloguePin[]> = pictureIndexConfigured()
+    const lookalikesPromise: Promise<CataloguePin[]> = scanPictureSearchOn()
       ? withTimeout(
         lookalikePins(Buffer.from(imageBase64, "base64"), SCAN_LOOKALIKES).then(async (ids) => {
           if (ids.length === 0) return [];

@@ -58,6 +58,7 @@ const scan = () => request(app).post("/api/scan/identify").set("Authorization", 
 beforeEach(() => {
   create.mockReset();
   Object.assign(state, { indexOn: true, lookalikeIds: ["PHUK-10000009"], delayMs: 0, searched: 0 });
+  vi.stubEnv("SCAN_PICTURE_SEARCH", "true");
   vi.useFakeTimers({ toFake: ["Date"] });
   vi.setSystemTime(Date.now() + Math.floor(Math.random() * 1e9) + 1e6);
 });
@@ -81,8 +82,8 @@ describe("look-alikes in the collector scan", () => {
     expect(JSON.stringify(res.body)).not.toContain("pinandpop.com");
   });
 
-  it("does nothing different when the picture index is off", async () => {
-    state.indexOn = false;
+  it("does nothing different when the picture index is off, or SCAN_PICTURE_SEARCH isn't on", async () => {
+    vi.stubEnv("SCAN_PICTURE_SEARCH", "");
     create
       .mockResolvedValueOnce(reply('{"characters":["Stitch"],"keywords":[],"text":""}'))
       .mockResolvedValueOnce(reply('[{"pinId":"PHUK-10000001","confidence":60,"reasoning":"Surf"}]'))

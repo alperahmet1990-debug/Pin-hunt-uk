@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import {
   ActivityIndicator,
   KeyboardAvoidingView,
+  Linking,
   Platform,
   ScrollView,
   StyleSheet,
@@ -18,6 +19,7 @@ import { router } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { radius, spacing } from '@/constants/theme';
+import { feedbackMailtoUrl, hasSupportContact, SUPPORT_EMAIL } from '@/constants/appConfig';
 import {
   DELETE_CONFIRM_WORD,
   isDeleteConfirmed,
@@ -37,8 +39,10 @@ const KEPT_ITEMS = [
   'Approved catalogue photos stay in the catalogue.',
 ];
 
+const NOT_ALLOWED_WITH_SUPPORT = "This account can't be deleted in the app. Please contact PinHunt support.";
+
 const ERROR_MESSAGES = {
-  not_allowed: "This account can't be deleted in the app. Please contact PinHunt support.",
+  not_allowed: "This account can't be deleted in the app.",
   open_trade: "You have a trade in progress. Open your trades to cancel it or finish it. If pins are already in the post, report a problem on the trade and we'll review it.",
   retry: "We couldn't delete your account. Please check your connection and try again.",
 } as const;
@@ -50,6 +54,7 @@ export default function DeleteAccountScreen() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<keyof typeof ERROR_MESSAGES | null>(null);
 
+  const supportUrl = hasSupportContact(SUPPORT_EMAIL) ? feedbackMailtoUrl(SUPPORT_EMAIL, 'PinHunt account deletion') : null;
   const canConfirm = isDeleteConfirmed(typed) && !busy;
 
   const confirm = async () => {
@@ -101,9 +106,19 @@ export default function DeleteAccountScreen() {
           />
           {error && (
             <Text accessibilityRole="alert" style={[styles.error, { color: colors.destructive }]}>
-              {ERROR_MESSAGES[error]}
+              {error === 'not_allowed' && supportUrl ? NOT_ALLOWED_WITH_SUPPORT : ERROR_MESSAGES[error]}
             </Text>
           )}
+          {error === 'not_allowed' && supportUrl ? (
+            <TouchableOpacity
+              onPress={() => Linking.openURL(supportUrl).catch(() => {})}
+              accessibilityRole="link"
+              accessibilityLabel={`Email PinHunt support at ${SUPPORT_EMAIL}`}
+              style={styles.supportLink}
+            >
+              <Text style={[styles.supportLinkText, { color: colors.homeCoral }]}>{SUPPORT_EMAIL}</Text>
+            </TouchableOpacity>
+          ) : null}
           {error === 'open_trade' && (
             <TouchableOpacity
               onPress={() => router.push('/my-trades')}
@@ -153,6 +168,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter_500Medium',
   },
   error: { fontSize: 13, fontFamily: 'Inter_500Medium', lineHeight: 18 },
+  supportLink: { minHeight: 44, justifyContent: 'center' },
+  supportLinkText: { fontSize: 14, fontFamily: 'Inter_600SemiBold', textDecorationLine: 'underline' },
   button: { minHeight: 48, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', marginTop: 6 },
   buttonText: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
 });

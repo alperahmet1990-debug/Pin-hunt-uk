@@ -19,3 +19,8 @@ export function feedbackMailtoUrl(email: string = SUPPORT_EMAIL, subject = 'PinH
   if (!trimmed) return null;
   return `mailto:${trimmed}?subject=${encodeURIComponent(subject)}`;
 }
+
+/** True once a real support address is set. Screens must not promise "contact support" without it. */
+export function hasSupportContact(email: string = SUPPORT_EMAIL): boolean {
+  return email.trim().length > 0;
+}

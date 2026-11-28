@@ -14,7 +14,7 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { radius, spacing } from '@/constants/theme';
-import { feedbackMailtoUrl, SUPPORT_EMAIL } from '@/constants/appConfig';
+import { feedbackMailtoUrl, hasSupportContact, SUPPORT_EMAIL } from '@/constants/appConfig';
 import { UNDER_AGE_MESSAGE } from '@/utils/ageCheck';
 
 export default function NotEligibleScreen() {
@@ -22,7 +22,7 @@ export default function NotEligibleScreen() {
   const insets = useSafeAreaInsets();
   const { signOut } = useAuth();
   const [signingOut, setSigningOut] = useState(false);
-  const supportUrl = feedbackMailtoUrl(SUPPORT_EMAIL, 'PinHunt age check');
+  const supportUrl = hasSupportContact(SUPPORT_EMAIL) ? feedbackMailtoUrl(SUPPORT_EMAIL, 'PinHunt age check') : null;
 
   return (
     <ScrollView
@@ -74,11 +74,11 @@ export default function NotEligibleScreen() {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.support}>
-        <Text style={[styles.supportText, { color: colors.homeMuted }]}>
-          If this is a mistake, contact PinHunt support.
-        </Text>
-        {supportUrl ? (
+      {supportUrl ? (
+        <View style={styles.support}>
+          <Text style={[styles.supportText, { color: colors.homeMuted }]}>
+            If this is a mistake, contact PinHunt support.
+          </Text>
           <TouchableOpacity
             onPress={() => Linking.openURL(supportUrl).catch(() => {})}
             accessibilityRole="link"
@@ -86,8 +86,8 @@ export default function NotEligibleScreen() {
           >
             <Text style={[styles.supportLinkText, { color: colors.homeCoral }]}>{SUPPORT_EMAIL}</Text>
           </TouchableOpacity>
-        ) : null}
-      </View>
+        </View>
+      ) : null}
     </ScrollView>
   );
 }

@@ -8,9 +8,9 @@
 --   setVotes   which confirmed items voted for each set
 --   accuracy   the last accuracy check (right first / top 5 / misses)
 --
--- Purely additive: one nullable-free column with an empty default. No
--- existing column, row, policy or function changes. RLS is unchanged (the
--- table stays service-role only, as in 076).
+-- Purely additive: one not-null column with an empty default. No
+-- existing column, row, policy or function changes. RLS is unchanged (076's
+-- admin read policy; writes are service-role only). Verify: supabase/verify/086_verify.sql.
 --
 -- Apply in the STAGING Supabase SQL editor first, then production. Run AFTER
 -- 076 (and after 085, which it doesn't depend on).

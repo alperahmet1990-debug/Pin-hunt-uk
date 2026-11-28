@@ -12,7 +12,7 @@
  * the Find Trades tile, Continue Collecting, the large What's Happening
  * cards, Get started and Photograph your pins. Find Trades stays on
  * Collection (For Trade and ISO tabs) and Community. "New to the catalogue"
- * was added back by the maintainer (28 Nov 2026) to get photos for new pins.
+ * (photos for new pins) partly reverses that; see PR #784 for its approval.
  */
 import React, { useEffect, useMemo, useState } from 'react';
 import { Image, Linking, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';

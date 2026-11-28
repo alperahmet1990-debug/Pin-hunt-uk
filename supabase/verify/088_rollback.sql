@@ -46,6 +46,8 @@ end
 $fn$;
 
 revoke all on function public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer) from public;
+-- Supabase's default privileges give anon execute on new public functions; keep 088's tighter grant.
+revoke all on function public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer) from anon;
 grant execute on function public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer) to authenticated, service_role;
 
 notify pgrst, 'reload schema';
@@ -55,3 +57,5 @@ commit;
 -- ── Check ──
 --   select pg_get_function_identity_arguments(oid) from pg_proc where proname = 'catalogue_coverage_page';
 --     -- one row, ending in "p_limit integer" (no p_sort)
+--   select has_function_privilege('anon', 'public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer)', 'execute');
+--     -- false

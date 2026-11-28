@@ -42,7 +42,7 @@ describe('Privacy Policy and Terms of Use', () => {
 
   it('lists every service the AI photo notice says photos go to', () => {
     const policy = text(PRIVACY_POLICY);
-    for (const provider of ['OpenAI', 'Google Cloud Vision', 'Pixian']) {
+    for (const provider of ['OpenAI', 'Google Cloud Vision', 'Google Cloud Vertex AI', 'Pixian']) {
       expect(AI_PHOTO_CONSENT_COPY.body).toContain(provider);
       expect(policy).toContain(provider);
     }

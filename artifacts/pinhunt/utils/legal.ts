@@ -39,7 +39,7 @@ export function companyLine(): string {
   return `${COMPANY.name} · Registered in ${COMPANY.registeredIn} · Company no. ${COMPANY.number}`;
 }
 
-export const LAST_UPDATED = '9 November 2026';
+export const LAST_UPDATED = '28 November 2026';
 
 /** A paragraph, or a bulleted list. */
 export type LegalBlock = string | string[];
@@ -108,7 +108,7 @@ export const PRIVACY_POLICY: LegalDoc = {
           'Render: runs the PinHunt API server.',
           'OpenAI: identifies pins from photos you scan and from photos of pin boards sent to us for the catalogue.',
           'Google Cloud Vision: reads text and finds similar images in photos you scan, to improve identification.',
-          'Google Cloud Vertex AI: compares pins in photos of pin boards sent to us for the catalogue with catalogue pictures, to find the right pin.',
+          'Google Cloud Vertex AI: compares the pin in photos you scan, and pins in photos of pins and pin boards sent to us for the catalogue, with catalogue pictures, to find the right pin.',
           'Pixian.ai: removes the background from photos you submit to the catalogue.',
           'postcodes.io: turns the postcode you enter for Collectors Nearby into an approximate location. Only the postcode is sent.',
           'Expo: delivers app updates.',

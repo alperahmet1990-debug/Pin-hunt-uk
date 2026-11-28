@@ -14,6 +14,8 @@ import {
 import { findBoardCandidates } from "../services/boardScan/candidates";
 import { FORMAT_MISMATCH_MAX, FORMAT_RULES, formatMismatches, MATCH_PLAUSIBLE_MIN, MATCH_VERIFIED_MIN, UNVERIFIED_MAX } from "../services/boardScan/match";
 import { fetchReferenceImage } from "../services/boardScan/references";
+import { lookalikePins } from "../services/pictureIndex/search";
+import { pictureIndexConfigured } from "../services/pictureIndex/vertex";
 import { createStageTimer } from "../services/scanTiming";
 import {
   createScanBudget,
@@ -72,8 +74,31 @@ interface ScanMatch {
   verified?: boolean;
 }
 
+/** `promise`'s value, or null if it takes longer than `ms` (the timer is always cleared). */
+export function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T | null> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const late = new Promise<null>((resolve) => { timer = setTimeout(() => resolve(null), ms); });
+  return Promise.race([promise, late]).finally(() => clearTimeout(timer));
+}
+
 /** Catalogue candidates searched per scan (the board scanner's cap). */
 export const SCAN_MAX_CANDIDATES = 150;
+/** Pins the picture index adds to the candidates (closest first). */
+export const SCAN_LOOKALIKES = 30;
+/** Of those, the closest few always get a place in the picture check. */
+export const SCAN_LOOKALIKES_COMPARED = 3;
+/** A slow picture search mustn't hold up the scan: it's dropped after this. */
+export const LOOKALIKE_TIMEOUT_MS = 5_000;
+
+/**
+ * Look-alikes in collector scans need SCAN_PICTURE_SEARCH=true as well as the
+ * picture index itself: collectors' photos then also go to Google Vertex AI,
+ * so switch it on only once the app's consent sheet naming Vertex (consent
+ * version 2026-11-28) has reached phones.
+ */
+export function scanPictureSearchOn(env: NodeJS.ProcessEnv = process.env): boolean {
+  return env.SCAN_PICTURE_SEARCH === "true" && pictureIndexConfigured(env);
+}
 
 /**
  * The board scanner's confidence rules, applied to a scan's final matches:
@@ -279,6 +304,27 @@ router.post("/scan/identify", requireUser, async (req, res) => {
     const visionPromise: Promise<VisionSignals | null> = getVisionSignals(imageBase64).catch(
       () => null,
     );
+    // The picture index (migration 085): catalogue pins whose reference
+    // pictures look like the photo, also alongside the describe call. One
+    // Google Vertex AI call (UK/EU region, ≈ $0.0001); best-effort and capped
+    // at LOOKALIKE_TIMEOUT_MS, so a slow or failed search only means none.
+    const lookalikesPromise: Promise<CataloguePin[]> = scanPictureSearchOn()
+      ? withTimeout(
+        lookalikePins(Buffer.from(imageBase64, "base64"), SCAN_LOOKALIKES).then(async (ids) => {
+          if (ids.length === 0) return [];
+          const order = new Map(ids.map((id, i) => [id, i]));
+          const pins = await repository.getPinsByIds(ids);
+          return pins.filter((p) => order.has(p.id)).sort((a, b) => order.get(a.id)! - order.get(b.id)!);
+        }),
+        LOOKALIKE_TIMEOUT_MS,
+      ).then((pins) => {
+        if (pins === null) { skipped.push("lookalikes:timeout"); return []; }
+        return pins;
+      }).catch((err: unknown) => {
+        console.warn("[scan] picture search failed, using text search only:", err instanceof Error ? err.message : err);
+        return [] as CataloguePin[];
+      })
+      : Promise.resolve([]);
     // A slow or failed description isn't fatal: ranking still sees the photo
     // and whatever Vision found. It just mustn't eat ranking's time.
     const describeResp = await withScanReasoning((extra) => openai.chat.completions.create({
@@ -347,8 +393,11 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
     // The board scanner's search, built for the 116k catalogue: each
     // character with each specific word first, then printed text (the
     // describe step's and Vision's OCR), then the broad search.
+    const lookalikes = await lookalikesPromise;
+    timer.mark("lookalikes");
     const catalogue = await findBoardCandidates(
       repository, description, scanTextTerms(describedText, visionSignals, visionTerms), SCAN_MAX_CANDIDATES,
+      [], lookalikes,
     );
     timer.mark("candidates");
     if (catalogue.length === 0) {
@@ -473,6 +522,14 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       // Text metadata alone confuses similar pins (e.g. every Princess
       // Pastries macaron shares the same collection description).
       const byPinId = new Map(catalogue.map((p) => [p.id, p]));
+
+      // The closest look-alikes always get a place in the picture check
+      // (the ranking reads titles only), right after the ranking's top 3.
+      const lookalikeExtras = lookalikes
+        .filter((p) => byPinId.has(p.id) && !matches.some((m) => m.pinId === p.id))
+        .slice(0, SCAN_LOOKALIKES_COMPARED)
+        .map((p) => ({ pinId: p.id, confidence: 30, reasoning: "Looks like your photo (picture search)." }));
+      if (lookalikeExtras.length) matches = [...matches.slice(0, 3), ...lookalikeExtras, ...matches.slice(3)];
 
       // Pull in same-collection siblings that have real catalogue images.
       // Similar pins in one collection (e.g. all Princess Pastries macarons)
